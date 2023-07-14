@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<!-- Connection Pool Info: https://tomcat.apache.org/tomcat-8.0-doc/jdbc-pool.html -->
+	<Resource name="jdbc/globecapital" auth="Container"
+		type="javax.sql.DataSource"
+		 username="root"
+		password="roadrunner"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://db.globecapital.com:3306/globecapital?autoReconnect=true"
+		initialSize="15" minIdle="15" maxIdle="30" maxWaitMillis="10000" />
+		
+	<Resource name="jdbc/quote" auth="Container"
+		type="javax.sql.DataSource"
+		 username="root"
+		password="roadrunner"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://db.globecapital.com:3306/quote?autoReconnect=true"
+		initialSize="15" minIdle="15" maxIdle="30" maxWaitMillis="10000" />
+		
+	<Resource name="jdbc/chart" auth="Container"
+		type="javax.sql.DataSource"
+		 username="root"
+		password="roadrunner"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://db.globecapital.com:3306/chart?autoReconnect=true"
+		initialSize="15" minIdle="15" maxIdle="30" maxWaitMillis="10000" />
+		
+	<Resource name="jdbc/news" auth="Container"
+		type="javax.sql.DataSource"
+		 username="root"
+		password="roadrunner"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://db.globecapital.com:3306/news?autoReconnect=true"
+		initialSize="15" minIdle="15" maxIdle="30" maxWaitMillis="10000" />
+		
+	<Resource name="jdbc/quote_data" auth="Container"
+		type="javax.sql.DataSource"
+		 username="platformuatwrite"
+		password="gcuatwrite"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://192.168.200.195:3306/QUOTE_DATA?autoReconnect=true"
+		initialSize="10" minIdle="10" maxIdle="30" maxWaitMillis="10000" />
+
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+</Context>

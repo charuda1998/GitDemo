@@ -1,0 +1,426 @@
+#General
+unit_testing.enabled=true
+service_maintenance=false
+
+#Audit
+app.needAudit=false
+app.needLogAudit=true
+
+#Webservice
+webservice.encrypt.key = globecapital2020
+
+#Orderconfig
+order.validateDPR=true
+order.validateDPRForAMO=false
+order.lastUsedProdType=true
+disclosed_qty_min_percent_non_commodity = 10
+disclosed_qty_min_percent_commodity = 25
+
+#AdvanceLogin
+advancelogin.check_different_device = false
+
+#API timeout in milliseconds
+http.connection_timeout = 10000
+http.read_timeout = 20000
+
+#Only for dev purpose
+today_position = {\"ResponseStatus\":true,\"ResponseObject\":{\"lstHeaderId\":null,\"lstHeaderNm\":null,\"dtRows\":null,\"objJSONRows\":[{\"Exch\":\"NSE\",\"SquareOff\":null,\"Inst\":\"EQUITIES\",\"Sym\":\"IFCI\",\"Series\":\"EQ\",\"ExpDate\":\"NA\",\"StrPrc\":\"NA\",\"OptType\":\"NA\",\"MTM\":\"\",\"NetQty\":\"5\",\"AvgNetPrc\":\"5.75\",\"NetValue\":\"-28.75\",\"BuyQty\":\"5\",\"BuyValue\":\"28.75\",\"AvgBuyPrc\":\"5.75\",\"SellQty\":\"0\",\"SellValue\":\"0.00\",\"AvgSellPrc\":\"0.00\",\"LTP\":\"\",\"ProdType\":\"DELIVERY\",\"Token\":\"1491\",\"SegmentId\":\"1\",\"RegularLot\":\"1\",\"PriceNum\":\"1\",\"PriceDen\":\"1\",\"GenNum\":\"1\",\"GenDen\":\"1\",\"DecLocator\":\"100\",\"PrcTick\":\"5\",\"AllowedNetQty\":\"0\",\"PrefMktSegId\":\"-1\",\"PrefToken\":\"0\"},{\"Exch\":\"NSECDS\",\"SquareOff\":null,\"Inst\":\"FUTCUR\",\"Sym\":\"USDINR\",\"Series\":\"NA\",\"ExpDate\":\"27 OCT 2020\",\"StrPrc\":\"NA\",\"OptType\":\"NA\",\"MTM\":\"\",\"NetQty\":\"1\",\"AvgNetPrc\":\"73.4025\",\"NetValue\":\"-73402.50\",\"BuyQty\":\"1\",\"BuyValue\":\"73402.50\",\"AvgBuyPrc\":\"73.4025\",\"SellQty\":\"0\",\"SellValue\":\"0.00\",\"AvgSellPrc\":\"0.0000\",\"LTP\":\"\",\"ProdType\":\"CARRYFORWARD\",\"Token\":\"2698\",\"SegmentId\":\"13\",\"RegularLot\":\"1000\",\"PriceNum\":\"1\",\"PriceDen\":\"1\",\"GenNum\":\"1\",\"GenDen\":\"1\",\"DecLocator\":\"10000000\",\"PrcTick\":\"25000\",\"AllowedNetQty\":\"0\",\"PrefMktSegId\":\"-1\",\"PrefToken\":\"0\"},{\"Exch\":\"NSE\",\"SquareOff\":null,\"Inst\":\"FUTIDX\",\"Sym\":\"NIFTY\",\"Series\":\"NA\",\"ExpDate\":\"29 OCT 2020\",\"StrPrc\":\"NA\",\"OptType\":\"NA\",\"MTM\":\"\",\"NetQty\":\"0\",\"AvgNetPrc\":\"0.00\",\"NetValue\":\"-1410.00\",\"BuyQty\":\"225\",\"BuyValue\":\"2646000.00\",\"AvgBuyPrc\":\"11760.00\",\"SellQty\":\"225\",\"SellValue\":\"2644590.00\",\"AvgSellPrc\":\"11753.73\",\"LTP\":\"\",\"ProdType\":\"CARRYFORWARD\",\"Token\":\"50837\",\"SegmentId\":\"2\",\"RegularLot\":\"75\",\"PriceNum\":\"1\",\"PriceDen\":\"1\",\"GenNum\":\"1\",\"GenDen\":\"1\",\"DecLocator\":\"100\",\"PrcTick\":\"5\",\"AllowedNetQty\":\"0\",\"PrefMktSegId\":\"-1\",\"PrefToken\":\"0\"},{\"Exch\":\"BSE\",\"SquareOff\":null,\"Inst\":\"EQUITIES\",\"Sym\":\"IFCI\",\"Series\":\"A \",\"ExpDate\":\"NA\",\"StrPrc\":\"NA\",\"OptType\":\"NA\",\"MTM\":\"\",\"NetQty\":\"0\",\"AvgNetPrc\":\"0.00\",\"NetValue\":\"-0.02\",\"BuyQty\":\"1\",\"BuyValue\":\"5.72\",\"AvgBuyPrc\":\"5.72\",\"SellQty\":\"1\",\"SellValue\":\"5.70\",\"AvgSellPrc\":\"5.70\",\"LTP\":\"\",\"ProdType\":\"MARGIN\",\"Token\":\"500106\",\"SegmentId\":\"3\",\"RegularLot\":\"1\",\"PriceNum\":\"1\",\"PriceDen\":\"1\",\"GenNum\":\"1\",\"GenDen\":\"1\",\"DecLocator\":\"100\",\"PrcTick\":\"1\",\"AllowedNetQty\":\"0\",\"PrefMktSegId\":\"-1\",\"PrefToken\":\"0\"},{\"Exch\":\"BSE\",\"SquareOff\":null,\"Inst\":\"EQUITIES\",\"Sym\":\"IFCI\",\"Series\":\"A \",\"ExpDate\":\"NA\",\"StrPrc\":\"NA\",\"OptType\":\"NA\",\"MTM\":\"\",\"NetQty\":\"2\",\"AvgNetPrc\":\"5.72\",\"NetValue\":\"-11.44\",\"BuyQty\":\"2\",\"BuyValue\":\"11.44\",\"AvgBuyPrc\":\"5.72\",\"SellQty\":\"0\",\"SellValue\":\"0.00\",\"AvgSellPrc\":\"0.00\",\"LTP\":\"\",\"ProdType\":\"DELIVERY\",\"Token\":\"500106\",\"SegmentId\":\"3\",\"RegularLot\":\"1\",\"PriceNum\":\"1\",\"PriceDen\":\"1\",\"GenNum\":\"1\",\"GenDen\":\"1\",\"DecLocator\":\"100\",\"PrcTick\":\"1\",\"AllowedNetQty\":\"0\",\"PrefMktSegId\":\"-1\",\"PrefToken\":\"0\"},{\"Exch\":\"BSE\",\"SquareOff\":null,\"Inst\":\"EQUITIES\",\"Sym\":\"GANESHBE\",\"Series\":\"X \",\"ExpDate\":\"NA\",\"StrPrc\":\"NA\",\"OptType\":\"NA\",\"MTM\":\"\",\"NetQty\":\"0\",\"AvgNetPrc\":\"0.00\",\"NetValue\":\"-0.15\",\"BuyQty\":\"1\",\"BuyValue\":\"63.35\",\"AvgBuyPrc\":\"63.35\",\"SellQty\":\"1\",\"SellValue\":\"63.20\",\"AvgSellPrc\":\"63.20\",\"LTP\":\"\",\"ProdType\":\"MARGIN\",\"Token\":\"500153\",\"SegmentId\":\"3\",\"RegularLot\":\"1\",\"PriceNum\":\"1\",\"PriceDen\":\"1\",\"GenNum\":\"1\",\"GenDen\":\"1\",\"DecLocator\":\"100\",\"PrcTick\":\"5\",\"AllowedNetQty\":\"0\",\"PrefMktSegId\":\"-1\",\"PrefToken\":\"0\"},{\"Exch\":\"BSE\",\"SquareOff\":null,\"Inst\":\"EQUITIES\",\"Sym\":\"GANESHBE\",\"Series\":\"X \",\"ExpDate\":\"NA\",\"StrPrc\":\"NA\",\"OptType\":\"NA\",\"MTM\":\"\",\"NetQty\":\"1\",\"AvgNetPrc\":\"63.35\",\"NetValue\":\"-63.35\",\"BuyQty\":\"1\",\"BuyValue\":\"63.35\",\"AvgBuyPrc\":\"63.35\",\"SellQty\":\"0\",\"SellValue\":\"0.00\",\"AvgSellPrc\":\"0.00\",\"LTP\":\"\",\"ProdType\":\"DELIVERY\",\"Token\":\"500153\",\"SegmentId\":\"3\",\"RegularLot\":\"1\",\"PriceNum\":\"1\",\"PriceDen\":\"1\",\"GenNum\":\"1\",\"GenDen\":\"1\",\"DecLocator\":\"100\",\"PrcTick\":\"5\",\"AllowedNetQty\":\"0\",\"PrefMktSegId\":\"-1\",\"PrefToken\":\"0\"}],\"objJSONHeader\":null},\"ResponseCode\":0,\"ErrorMessages\":null}
+derivative_position = {\"ResponseStatus\":true,\"ResponseObject\":{\"lstHeaderId\":null,\"lstHeaderNm\":null,\"dtRows\":null,\"objJSONRows\":[{\"Exch\":\"NSE\",\"SquareOff\":null,\"Inst\":\"EQUITIES\",\"Sym\":\"IFCI\",\"Series\":\"EQ\",\"ExpDate\":\"NA\",\"StrPrc\":\"NA\",\"OptType\":\"NA\",\"MTM\":\"\",\"NetQty\":\"5\",\"AvgNetPrc\":\"5.75\",\"NetValue\":\"-28.75\",\"BuyQty\":\"5\",\"BuyValue\":\"28.75\",\"AvgBuyPrc\":\"5.75\",\"SellQty\":\"0\",\"SellValue\":\"0.00\",\"AvgSellPrc\":\"0.00\",\"LTP\":\"\",\"ProdType\":\"DELIVERY\",\"Token\":\"1491\",\"SegmentId\":\"1\",\"RegularLot\":\"1\",\"PriceNum\":\"1\",\"PriceDen\":\"1\",\"GenNum\":\"1\",\"GenDen\":\"1\",\"DecLocator\":\"100\",\"PrcTick\":\"5\",\"AllowedNetQty\":\"0\",\"PrefMktSegId\":\"-1\",\"PrefToken\":\"0\"},{\"Exch\":\"NSECDS\",\"SquareOff\":null,\"Inst\":\"FUTCUR\",\"Sym\":\"USDINR\",\"Series\":\"NA\",\"ExpDate\":\"27 OCT 2020\",\"StrPrc\":\"NA\",\"OptType\":\"NA\",\"MTM\":\"\",\"NetQty\":\"4\",\"AvgNetPrc\":\"73.4813\",\"NetValue\":\"-293925.00\",\"BuyQty\":\"4\",\"BuyValue\":\"293925.00\",\"AvgBuyPrc\":\"73.4813\",\"SellQty\":\"0\",\"SellValue\":\"0.00\",\"AvgSellPrc\":\"0.0000\",\"LTP\":\"\",\"ProdType\":\"CARRYFORWARD\",\"Token\":\"2698\",\"SegmentId\":\"13\",\"RegularLot\":\"1000\",\"PriceNum\":\"1\",\"PriceDen\":\"1\",\"GenNum\":\"1\",\"GenDen\":\"1\",\"DecLocator\":\"10000000\",\"PrcTick\":\"25000\",\"AllowedNetQty\":\"0\",\"PrefMktSegId\":\"-1\",\"PrefToken\":\"0\"},{\"Exch\":\"NSE\",\"SquareOff\":null,\"Inst\":\"FUTIDX\",\"Sym\":\"NIFTY\",\"Series\":\"NA\",\"ExpDate\":\"29 OCT 2020\",\"StrPrc\":\"NA\",\"OptType\":\"NA\",\"MTM\":\"\",\"NetQty\":\"0\",\"AvgNetPrc\":\"0.00\",\"NetValue\":\"-1410.00\",\"BuyQty\":\"225\",\"BuyValue\":\"2646000.00\",\"AvgBuyPrc\":\"11760.00\",\"SellQty\":\"225\",\"SellValue\":\"2644590.00\",\"AvgSellPrc\":\"11753.73\",\"LTP\":\"\",\"ProdType\":\"CARRYFORWARD\",\"Token\":\"50837\",\"SegmentId\":\"2\",\"RegularLot\":\"75\",\"PriceNum\":\"1\",\"PriceDen\":\"1\",\"GenNum\":\"1\",\"GenDen\":\"1\",\"DecLocator\":\"100\",\"PrcTick\":\"5\",\"AllowedNetQty\":\"0\",\"PrefMktSegId\":\"-1\",\"PrefToken\":\"0\"},{\"Exch\":\"BSE\",\"SquareOff\":null,\"Inst\":\"EQUITIES\",\"Sym\":\"IFCI\",\"Series\":\"A \",\"ExpDate\":\"NA\",\"StrPrc\":\"NA\",\"OptType\":\"NA\",\"MTM\":\"\",\"NetQty\":\"0\",\"AvgNetPrc\":\"0.00\",\"NetValue\":\"-0.02\",\"BuyQty\":\"1\",\"BuyValue\":\"5.72\",\"AvgBuyPrc\":\"5.72\",\"SellQty\":\"1\",\"SellValue\":\"5.70\",\"AvgSellPrc\":\"5.70\",\"LTP\":\"\",\"ProdType\":\"MARGIN\",\"Token\":\"500106\",\"SegmentId\":\"3\",\"RegularLot\":\"1\",\"PriceNum\":\"1\",\"PriceDen\":\"1\",\"GenNum\":\"1\",\"GenDen\":\"1\",\"DecLocator\":\"100\",\"PrcTick\":\"1\",\"AllowedNetQty\":\"0\",\"PrefMktSegId\":\"-1\",\"PrefToken\":\"0\"},{\"Exch\":\"BSE\",\"SquareOff\":null,\"Inst\":\"EQUITIES\",\"Sym\":\"IFCI\",\"Series\":\"A \",\"ExpDate\":\"NA\",\"StrPrc\":\"NA\",\"OptType\":\"NA\",\"MTM\":\"\",\"NetQty\":\"2\",\"AvgNetPrc\":\"5.72\",\"NetValue\":\"-11.44\",\"BuyQty\":\"2\",\"BuyValue\":\"11.44\",\"AvgBuyPrc\":\"5.72\",\"SellQty\":\"0\",\"SellValue\":\"0.00\",\"AvgSellPrc\":\"0.00\",\"LTP\":\"\",\"ProdType\":\"DELIVERY\",\"Token\":\"500106\",\"SegmentId\":\"3\",\"RegularLot\":\"1\",\"PriceNum\":\"1\",\"PriceDen\":\"1\",\"GenNum\":\"1\",\"GenDen\":\"1\",\"DecLocator\":\"100\",\"PrcTick\":\"1\",\"AllowedNetQty\":\"0\",\"PrefMktSegId\":\"-1\",\"PrefToken\":\"0\"},{\"Exch\":\"BSE\",\"SquareOff\":null,\"Inst\":\"EQUITIES\",\"Sym\":\"GANESHBE\",\"Series\":\"X \",\"ExpDate\":\"NA\",\"StrPrc\":\"NA\",\"OptType\":\"NA\",\"MTM\":\"\",\"NetQty\":\"0\",\"AvgNetPrc\":\"0.00\",\"NetValue\":\"-0.15\",\"BuyQty\":\"1\",\"BuyValue\":\"63.35\",\"AvgBuyPrc\":\"63.35\",\"SellQty\":\"1\",\"SellValue\":\"63.20\",\"AvgSellPrc\":\"63.20\",\"LTP\":\"\",\"ProdType\":\"MARGIN\",\"Token\":\"500153\",\"SegmentId\":\"3\",\"RegularLot\":\"1\",\"PriceNum\":\"1\",\"PriceDen\":\"1\",\"GenNum\":\"1\",\"GenDen\":\"1\",\"DecLocator\":\"100\",\"PrcTick\":\"5\",\"AllowedNetQty\":\"0\",\"PrefMktSegId\":\"-1\",\"PrefToken\":\"0\"},{\"Exch\":\"BSE\",\"SquareOff\":null,\"Inst\":\"EQUITIES\",\"Sym\":\"GANESHBE\",\"Series\":\"X \",\"ExpDate\":\"NA\",\"StrPrc\":\"NA\",\"OptType\":\"NA\",\"MTM\":\"\",\"NetQty\":\"1\",\"AvgNetPrc\":\"63.35\",\"NetValue\":\"-63.35\",\"BuyQty\":\"1\",\"BuyValue\":\"63.35\",\"AvgBuyPrc\":\"63.35\",\"SellQty\":\"0\",\"SellValue\":\"0.00\",\"AvgSellPrc\":\"0.00\",\"LTP\":\"\",\"ProdType\":\"DELIVERY\",\"Token\":\"500153\",\"SegmentId\":\"3\",\"RegularLot\":\"1\",\"PriceNum\":\"1\",\"PriceDen\":\"1\",\"GenNum\":\"1\",\"GenDen\":\"1\",\"DecLocator\":\"100\",\"PrcTick\":\"5\",\"AllowedNetQty\":\"0\",\"PrefMktSegId\":\"-1\",\"PrefToken\":\"0\"}],\"objJSONHeader\":null},\"ResponseCode\":0,\"ErrorMessages\":null}
+gc_derivative_position = {\"Details\":[{\"BUYSELL\":\"B\",\"Exchange\":\"NSE\",\"HoldingValue\":220459.7,\"PRODUCTTYPE\":\"FUTURE\",\"Price\":73.94,\"QTY\":4000,\"SCRIPNAME\":\"USDINR 27-Oct-2020  \",\"SEGMENTS\":\"Currency\"}],\"MethodName\":\"GETFOCOBINEDPOSITION\",\"Msg\":\"Success\",\"Status\":\"True\",\"TotHoldingValue\":220459.7,\"TotRecords\":1}
+
+#DATABASE CONFIG
+db.adapter = MySQL
+db.driver_class = com.mysql.jdbc.Driver
+db.gc.url= jdbc:mysql://db.globecapital.com:3306/globecapital?autoReconnect=true
+db.quote.url= jdbc:mysql://db.globecapital.com:3306/quote?autoReconnect=true
+db.chart.url= jdbc:mysql://db.globecapital.com:3306/chart?autoReconnect=true
+db.news.url= jdbc:mysql://db.globecapital.com:3306/news?autoReconnect=true
+db.quoteData.url= jdbc:mysql://192.168.200.195:3306/QUOTE_DATA?autoReconnect=true
+db.username = root
+db.password = roadrunner
+
+#Jmx Monitoring
+jmx.url=com.msf.gcservices.monitoring.dev:
+gcservices.jmx.beans.GLOBECAPITAL_DB=${jmx.url}type=GLOBECAPITAL_DB
+gcservices.jmx.beans.QUOTE_DB=${jmx.url}type=QUOTE_DB
+gcservices.jmx.beans.CHART_DB=${jmx.url}type=CHART_DB
+gcservices.jmx.beans.NEWS_DB=${jmx.url}type=NEWS_DB
+gcservices.jmx.beans.FT_API=${jmx.url}type=FT_API
+gcservices.jmx.beans.SPYDER_API=${jmx.url}type=SPYDER_API
+gcservices.jmx.beans.GC_API=${jmx.url}type=GC_API
+gcservices.jmx.beans.CMOTS_CACHE=${jmx.url}type=CMOTS_CACHE
+gcservices.jmx.beans.QUOTE_DATA_DB=${jmx.url}type=QUOTE_DATA_DB
+
+nagios.nsca.hostName = passive-monitor
+nagios.nsca.host = 192.168.200.65
+nagios.nsca.port = 5667
+#[NONE,TRIPLE_DES,XOR]
+nagios.nsca.encryption = NONE
+nagios.nsca.password = [password]
+nagios.nsca.monitor.stats = true
+
+#QUOTECONFIG
+events_count = 6
+peer_comparison_record_count = 100
+
+#EXCHANGE MESSAGES API CONFIG
+ft_get_exchange_messages_hours = 8
+
+#CHARTS CONFIG
+chart_1M_past_days = 30
+chart_iq_url = https://mdev-ws.globextranet.com:8443/web/chartiq-v2/build/index.html
+
+#FTLOGIN API ENCRYPTION CONFIG
+moon.login.encryption.modulus=lnLDMeWvTgO17E50M5DQ1dbMLMKfOv2YclgyJIs+6Bls+/0ngDiLtROdMYBftJwQYD8g9OSJ5p2uMxVFucSFOG9Cwjy2g5+yw910TIYIVrmB3mHV8U9yoVNYq8ZXoc/r/MnCNDsnJv4HBeP4HcSM7IlyIYFX64HPJDztuimqUFs=
+moon.login.encryption.exponent=AQAB
+
+#FUND TRANSFER FT API CONFIG
+pay_in_url = http://125.19.26.230/inetnet/UserAuthentication/AuthenticateUser.aspx?
+
+#FTAPI CONFIG
+moon.api.base_url=https://globecapitalonline.com/RestAPIService
+moon.api.login=${moon.api.base_url}/NetNet/Login
+moon.api.authenticationStatus=${moon.api.base_url}/NetNet/SetAuthenticationStatus
+moon.api.passwordSettings=${moon.api.base_url}/NetNet/SavePasswordSettings
+moon.api.secretQuestions=${moon.api.base_url}/NetNet/GetSecretQuestions
+moon.api.twoFAAuthenticationApi=${moon.api.base_url}/NetNet/AuthenticateUser
+moon.api.logoff=${moon.api.base_url}/NetNet/LogOff
+moon.api.sendForgotPasswordRequest=${moon.api.base_url}/NetNet/SendForgotpwdRequest
+moon.api.sendOrderRequest=${moon.api.base_url}/Trading/SendOrderRequest
+moon.api.addWatchlist = ${moon.api.base_url}/Trading/SaveMarketWatchProfile
+moon.api.renameWatchlist=${moon.api.base_url}/Trading/RenameMarketWatchProfile
+moon.api.scripMaster=${moon.api.base_url}/Trading/ScripMaster
+moon.api.deleteWatchlistGroup=${moon.api.base_url}/Trading/RemoveMarketWatchProfile
+moon.api.SaveWatchlist=${moon.api.base_url}/Trading/SaveMarketWatchProfile
+moon.api.getProfileScrips=${moon.api.base_url}/Trading/GetProfileScrips
+moon.api.getProfileList=${moon.api.base_url}/Trading/GetProfileList
+moon.api.sendPosConvRequest=${moon.api.base_url}/Trading/SendPosConvRequest
+moon.api.getOrderBook=${moon.api.base_url}/Trading/GetOrderBook
+moon.api.getTradeBook=${moon.api.base_url}/Trading/GetTradeBook
+moon.api.getPeriodicitesForFundsSummary=${moon.api.base_url}/Trading/GetPeriodicitesForFundsSummary
+moon.api.getAdvanceFundsView=${moon.api.base_url}/Trading/GetAdvanceFundsView
+moon.api.getSpanMargin=${moon.api.base_url}/Trading/GetSpanMargin
+moon.api.getNetPosition=${moon.api.base_url}/Trading/GetNetPosition
+moon.api.computeBracketOrderRange=${moon.api.base_url}/Trading/ComputeBracketOrderRange
+moon.api.GetMarketStatusResponse=${moon.api.base_url}/Trading/GetMarketStatusResponse
+moon.api.SendForgotpwdRequest = ${moon.api.base_url}/NetNet/SendForgotpwdRequest
+moon.api.ForgotPasswordParam = ${moon.api.base_url}/NetNet/GetForgotPasswordParamList
+moon.api.ScripMaster=${moon.api.base_url}/Trading/ScripMaster
+moon.api.Index=${moon.api.base_url}/Trading/LoadIndexScrips
+moon.api.getStockView=${moon.api.base_url}/Trading/GetStockView
+moon.api.getExchangeMessages=${moon.api.base_url}/Trading/GetExchangeMessages
+moon.api.getEdisConfigDetails=${moon.api.base_url}/Trading/FetchEDISConfigDetails
+moon.api.getEdisQuantityDetails=${moon.api.base_url}/Trading/FetchEDISQuantityDetails
+moon.api.updateEdisApprovedQuantity=${moon.api.base_url}/Trading/UpdateEDISApprovedQuantity
+moon.api.insertEdisReqResponseDetails=${moon.api.base_url}/Trading/InsertEDISReqResponse
+moon.api.getMarginInfo=${moon.api.base_url}/Trading/GetOrderMarginInfo
+moon.api.getGTDOrderBook=${moon.api.base_url}/Trading/FetchGTDOrderBook
+moon.api.generate.otp=${moon.api.base_url}/NetNet/GenerateCipher
+moon.api.generate.new.otp=${moon.api.base_url}/NetNet/GenerateNewCipher
+moon.api.getMarginInfo=${moon.api.url}/Trading/GetOrderMarginInfo
+moon.api.fetchMarginPlusParams=${moon.api.url}/Trading/FetchMarginPlusParams
+ft.api.brokerage_url=http://192.168.200.162/inetnet/BrokerageDetails.aspx?type=1&enct=
+
+#GLOBE API CONFIG
+gc.api.sid = GLOBE123
+gc.api.userName = TEST001
+gc.api.password = 123TEST
+gc.api.base_url = https://globemks.globecapital.in/BOService.svc
+myglobe.api.base_url = https://ipo.globecapital.com/
+gc.api.base_url_holdings = http://10.217.215.70:10100/BOService.svc
+gc.api.getLogin = ${gc.api.base_url}/GETLOGIN?SID=
+gc.api.getHoldings = ${gc.api.base_url_holdings}/GETHOLDING?SID=
+gc.api.getEquityTransaction = ${gc.api.base_url}/GETEQTRXN?SID=
+gc.api.getDerivativeTransaction = ${gc.api.base_url}/GetFotrxn?SID=
+gc.api.getCurrencyTransaction = ${gc.api.base_url}/GETCURTRXN?SID=
+gc.api.getCommodityTransaction = ${gc.api.base_url}/GETCOMTRNX?SID=
+gc.api.getRealisedEquityTransactionScrip = ${gc.api.base_url}/GETEQTRXNSCRIP?SID=
+gc.api.getRealisedDerivativeTransactionScrip = ${gc.api.base_url}/GETFOTRXNSCRIP?SID=
+gc.api.getRealisedCurrencyTransactionScrip = ${gc.api.base_url}/GETCURRTRXNSCRIP?SID=
+gc.api.getRealisedCommodityTransactionScrip = ${gc.api.base_url}/GETCOMMTRXNSCRIP?SID=
+gc.api.getUnRealisedEquityTransactionScrip = ${gc.api.base_url}/GETEQTRXNSCRIPUNREL?SID=
+gc.api.getUnRealisedDerivativeTransactionScrip = ${gc.api.base_url}/GETFOTRXNSCRIPUNREL?SID=
+gc.api.getUnRealisedCurrencyTransactionScrip = ${gc.api.base_url}/GETCURRTRXNSCRIPUNREL?SID=
+gc.api.getUnRealisedCommodityTransactionScrip = ${gc.api.base_url}/GETCOMMTRXNSCRIPUNREL?SID=
+gc.api.getRealisedEquityProfitLoss = ${gc.api.base_url}/GETEQPL?SID=
+gc.api.getRealisedDerivativeProfitLoss = ${gc.api.base_url}/GETFOPL?SID=
+gc.api.getRealisedCurrencyProfitLoss = ${gc.api.base_url}/GETCURRPL?SID=
+gc.api.getRealisedCommodityProfitLoss = ${gc.api.base_url}/GETCOMMPL?SID=
+gc.api.getUnRealisedEquityProfitLoss = ${gc.api.base_url}/GETUNRELPLEQ?SID=
+gc.api.getUnRealisedDerivativeProfitLoss = ${gc.api.base_url}/GETUNRELPLFO?SID=
+gc.api.getUnRealisedCurrencyProfitLoss = ${gc.api.base_url}/GETUNRELPLCUR?SID=
+gc.api.getUnRealisedCommodityProfitLoss = ${gc.api.base_url}/GETUNRELPLCOM?SID=
+gc.api.getEquityTaxReport = ${gc.api.base_url}/GETEQTAXPL?SID=
+gc.api.getDerivativeTaxReport = ${gc.api.base_url}/GETFOTAXPL?SID=
+gc.api.getCurrencyTaxReport = ${gc.api.base_url}/GETCURTAXPL?SID=
+gc.api.getCommodityTaxReport = ${gc.api.base_url}/GETCOMTAXPL?SID=
+gc.api.getBankList = ${gc.api.base_url}/GETCLIENTBANK?SID=
+gc.api.getFundWithdrawalAmt = ${gc.api.base_url}/GETFUNDWITHDRWALAMT?SID=
+gc.api.getFundWithdrawalAmtRequest = ${gc.api.base_url}/GETFUNDWREQUEST?SID=
+gc.api.getFundTransaction=${gc.api.base_url}/GETFUNDWREQSTATUS?SID=
+gc.api.getCancelWithdrawRequest=${gc.api.base_url}/GETFUNDWRCANCELED?SID=
+gc.api.getEquityTransactionEmail= ${gc.api.base_url}/GETEQTRXNMAIL?SID=
+gc.api.getDerivativeTransactionEmail= ${gc.api.base_url}/GETFOTRXNMAIL?SID=
+gc.api.getCurrencyTransactionEmail= ${gc.api.base_url}/GETCURTRXNMAIL?SID=
+gc.api.getCommodityTransactionEmail= ${gc.api.base_url}/GETCOMTRXNMAIL?SID=
+gc.api.getLedgerEmail = ${gc.api.base_url}/GETLEDGERMAIL?SID=
+gc.api.getHoldingsEmail =${gc.api.base_url}/GETHOLDINGMAIL?SID=
+gc.api.getPortfolioEmail = ${gc.api.base_url}/GETPORTFOLIOMAIL?SID=
+gc.api.getEquityTaxEmail=${gc.api.base_url}/GETEQTAXREPORTMAIL?SID=
+gc.api.getDerivativeTaxEmail=${gc.api.base_url}/GETFOTAXREPORTMAIL?SID=
+gc.api.getCurrencyTaxEmail=${gc.api.base_url}/GETCURTAXREPORTMAIL?SID=
+gc.api.getCommodityTaxEmail=${gc.api.base_url}/GETCOMTAXREPORTMAIL?SID=
+gc.api.getRLEquityEmail=${gc.api.base_url}/GETEQPLMAIL?SID=
+gc.api.getRLDerivativeEmail=${gc.api.base_url}/GETFOPLMAIL?SID=
+gc.api.getRLCommodityEmail=${gc.api.base_url}/GETCOMPLMAIL?SID=
+gc.api.getRLCurrencyEmail=${gc.api.base_url}/GETCURPLMAIL?SID=
+gc.api.getContractEmail= ${gc.api.base_url}/GETCNNOTESMAIL?SID=
+gc.api.getEquitySaudaEmail= ${gc.api.base_url}/GETSAUDABILLMAIL?SID=
+gc.api.getDerivativeSaudaEmail= ${gc.api.base_url}/GETFOSAUDABILLMAIL?SID=
+gc.api.getCurrencySaudaEmail= ${gc.api.base_url}/GETCURSAUDABILLMAIL?SID=
+gc.api.getCommoditySaudaEmail= ${gc.api.base_url}/GETCOMSAUDABILLMAIL?SID=
+gc.api.getPortfolio = ${gc.api.base_url}/GETPORTFOLIO?SID=
+gc.api.getLedgerReport = ${gc.api.base_url}/GETLEDGER?SID=
+gc.api.getContractReport = ${gc.api.base_url}/GETPERIODDATECN?SID=
+gc.api.getEquitySaudaReport = ${gc.api.base_url}/GETPERIODDATEEQBILL?SID=
+gc.api.getDerivativeSaudaReport = ${gc.api.base_url}/GETPERIODDATEFOBILL?SID=
+gc.api.getEquityTrxnDownload=${gc.api.base_url}/GETEQTRXNDOWNLOAD?SID=
+gc.api.getDerivativeTrxnDownload=${gc.api.base_url}/GETFOTRXNDOWNLOAD?SID=
+gc.api.getCurrencyTrxnDownload=${gc.api.base_url}/GETCURTRXNDOWNLOAD?SID=
+gc.api.getCommodityTrxnDownload=${gc.api.base_url}/GETCOMTRXNDOWNLOAD?SID=
+gc.api.getEquityPLDownload=${gc.api.base_url}/GETEQPLDOWNLOAD?SID=
+gc.api.getDerivativePLDownload=${gc.api.base_url}/GETPLDOWNLOAD?SID=
+gc.api.getCurrencyPLDownload=${gc.api.base_url}/GETCURPLDOWNLOAD?SID=
+gc.api.getCommodityPLDownload=${gc.api.base_url}/GETCOMPLDOWNLOAD?SID=
+gc.api.getUnRelEquityPLDownload=${gc.api.base_url}/GETUNRELPLEQDOWNLOAD?SID=
+gc.api.getUnRelDerivativePLDownload=${gc.api.base_url}/GETUNRELPLFODOWNLOAD?SID=
+gc.api.getUnRelCurrencyPLDownload=${gc.api.base_url}/GETUNRELPLCURDOWNLOAD?SID=
+gc.api.getUnRelCommodityPLDownload=${gc.api.base_url}/GETUNRELPLCOMDOWNLOAD?SID=
+gc.api.getUnRelEquityPLEmail=${gc.api.base_url}/GETUNRELPLEQMAIL?SID=
+gc.api.getUnRelDerivativePLEmail=${gc.api.base_url}/GETUNRELPLFOMAIL?SID=
+gc.api.getUnRelCurrencyPLEmail=${gc.api.base_url}/GETUNRELPLCURMAIL?SID=
+gc.api.getUnRelCommodityPLEmail=${gc.api.base_url}/GETUNRELPLCOMMAIL?SID=
+gc.api.getLedgerDownload=${gc.api.base_url}/GETLEDGERDOWNLOAD?SID=
+gc.api.getStockDownload=${gc.api.base_url}/GETSTOCKDOWNLOAD?SID=
+gc.api.getPortfolioDownload=${gc.api.base_url}/GETPORTFOLIODOWNLOAD?SID=
+gc.api.getContractDownload=${gc.api.base_url}/GETCONTRACTDOWNLOAD?SID=
+gc.api.getEquitySaudaDownload=${gc.api.base_url}/GETSAUDABILLDOWNLOAD?SID=
+gc.api.getDerivativeSaudaDownload=${gc.api.base_url}/GETFOSAUDABILLDOWNLOAD?SID=
+gc.api.getCurrencySaudaDownload=${gc.api.base_url}/GETCURSAUDABILLDOWNLOAD?SID=
+gc.api.getCommoditySaudaDownload=${gc.api.base_url}/GETCOMSAUDABILLDOWNLOAD?SID=
+gc.api.getEquityTaxDownload=${gc.api.base_url}/GETEQTAXRPTDOWNLOAD?SID=
+gc.api.getDerivativeTaxDownload=${gc.api.base_url}/GETFOTAXPLDOWNLOAD?SID=
+gc.api.getCommodityTaxDownload=${gc.api.base_url}/GETCOMTAXPLDOWNLOAD?SID=
+gc.api.getCurrencyTaxDownload=${gc.api.base_url}/GETCURTAXPLDOWNLOAD?SID=
+gc.api.getPledgeLink=${gc.api.base_url}/GETURLLINK?SID=
+gc.api.getDiscrepancy=${gc.api.base_url}/GETDISCREPANCY?SID=
+gc.api.getResolvedDiscrepancy=${gc.api.base_url}/GETRESOLVEDISCREPANCY?SID=
+gc.api.getResolvedViewDiscrepancy=${gc.api.base_url}/GETRESOLVEDISVIEW?SID=
+gc.api.getDiscrepancyModify=${gc.api.base_url}/GETDISCREPANCYMOD?SID=
+gc.api.getFOCombinedPosition=${gc.api.base_url_holdings}/GETFOCOBINEDPOSITION?SID=
+gc.api.getIPOLink=${myglobe.api.base_url}/IPORouterApp?token=
+gc.api.getFundHistory=${gc.api.base_url}/GETFUNDHISTORY?SID=
+gc.api.getPayinTransactions=${gc.api.base_url}/GETFUNDPAYINTRXN
+gc.api.getPartyDetails = ${gc.api.base_url}/GETPARTYDETAILS?SID=
+myglobe.authorization.token=R2xvYmVJUE9BdXRvTG9naW4=
+gc.api.WebLinkAuthToken=QVBJVVJM
+gc.api.AuthToken=R0xPQkVBUEk=
+MS8=WM106
+MS3=WM106
+MS4=EKY866
+MS1=L025
+MS19=L025
+
+#GLOBE RESEARCH API CONFIG
+gc.api.getResearchData= http://100.100.100.165:11117/ResearchData.svc/GetData?sid=R0xPQkVSZXNlYXJjaDEyMw==&
+
+#CMOTS API CONFIG
+cmots.timeout.connectiontimeout=20000
+cmots.timeout.readtimeout=20000
+cmots.authorization.token= bearer hevm1ZZJ8DoSy-ranNUdPxtcn7P7khX5Jd6YAHHdYwi69Yaz0aBcM_nUDKBTYB1NuykR35A_2FGAJSul73jMcw1yP98Kg8C0tILc51TcBJZe3rsjemXTUT6edG0zKo3SK7kcmKwn2_vudx8WNniLMe1KZlS58IdKYki13PCwjHQU6767kLu9LzGEV4LEHPozbJ_bIl9PSI1dNXuQ_zzPIuCJbxljjc7qQJOqSOK5VM6tmkvyLDBGhJT8O_aLx6Sui4jV-X8pqTj9wA8Wd_H2YxnsiFXnzzUfOF-1da0lZ2WMdHsfqFTOuMpyTY_QpxHtruBOG7af9_LYzwO-dMG2dA
+cmots.url.api.market=http://globecapitalapi.cmots.com/api/
+cmots.url.api.company_chart=CompanyChart/%s/%s/%s/%s
+cmots.url.api.company_master=CompanyMaster
+cmots.url.api.comp_peer_ratio=CompPeerRatio/%s/%s/%s
+cmots.url.api.key_stats=Keystats/%s/%s/%s
+cmots.url.api.comp_peer_performance=CompPeerPerformance/%s/%s/%s
+cmots.url.api.comp_peer_key_parameters=CompPeerKeyParams/%s/%s/%s
+cmots.url.api.share_holding_equity=ShareHoldingPatternEquity/%s
+cmots.url.api.financials_equity=FinancialsFOQuarterly/%s/%s
+cmots.url.api.margin_ratios=MarginRatios/%s/%s
+cmots.url.api.performance_ratios=PerformanceRatios/%s/%s
+cmots.url.api.efficiency_ratios=EfficiencyRatios/%s/%s
+cmots.url.api.financial_stability_ratios=FinancialStabilityRatios/%s/%s
+cmots.url.api.valuation_ratios=ValuationRatios/%s/%s
+cmots.url.api.growth_ratios=GrowthRatio/%s/%s
+cmots.url.api.liquidity_ratios=LiquidityRatios/%s/%s
+cmots.url.api.cash_flow_ratios=CashFlowRatios/%s/%s
+cmots.url.api.profit_and_loss_year_end=ProfitLossYearEnds/%s/%s
+cmots.url.api.quarterly_balance_sheet=QuarterlyBalanceSheet/%s/%s
+cmots.url.api.yearly_balance_sheet=YearlyBalanceSheet/%s/%s
+cmots.url.api.fno_overview=FNOOverView/%s/%s/%s
+cmots.url.api.expiry=GetExpiryOptions/%s
+cmots.url.api.option_chain=FNOOptionChain/%s/%s
+cmots.url.api.about_company=CompanyBackground/%s
+cmots.url.api.results_quarterly=ResultsQuarterly/%s/%s
+cmots.url.api.results_half_yearly=ResultsHalfYearly/%s/%s
+cmots.url.api.results_yearly=ResultsYearly/%s/%s
+cmots.url.api.consolidated_corporate=ConsolidatedCorportate/%s/%s
+cmots.url.api.fii_dii=FIIDIIData/%s/%s
+cmots.url.api.results_info=ResultsInfo/%s
+cmots.url.api.dividend=Dividend/%s/%s
+cmots.url.api.bonus=Bonus/%s/%s
+cmots.url.api.splits=Splits/%s/%s
+cmots.url.api.rights=Rights/%s/%s
+cmots.url.api.announcement=Announcement/%s
+cmots.url.api.listed_ipo=ListedIPO/%s/%s
+cmots.url.api.index_constituents=IndexConstituents/%s/%s
+cmots.url.api.index_performance=IndexPerformance/%s
+
+exchanges=nse,bse
+indexNames=NIFTY 50,NIFTY BANK,NIFTY PHARMA,NIFTY SMALL 100,SENSEX
+index=NIFTY,BANKNIFTY,NIFTYMID100,NIFTYSMALL,NIFTY500,INDIAVIX,SENSEX
+equity_index=NIFTY,BANKNIFTY,NIFTYMID100,NIFTYSMALL,NIFTY500,INDIAVIX
+equity_all_index=AUTO,FINSERVICE,INFRA,NIFTYIT,ALLCAP,AUTO,BANKEX,BSE100,BSE200,BSE500,BSECD,BSEIPO,BSEIT,POWER
+derivative_index=NIFTY,BANKNIFTY,NIFTYMID100,NIFTYSMALL,NIFTY500,INDIAVIX,SENSEX
+derivative_scrip_index=NIFTY,BANKNIFTY
+currency_scrip_index=USDINR,EURINR,JPYINR,GBPINR
+commodity_scrip_index=GOLD,SILVER,COPPER,COTTON
+
+#SPYDER API CONFIG
+spyder.api.base_url = http://125.19.26.228:9192/api/chart
+spyder.api.historical_data = ${spyder.api.base_url}/symbolhistoricaldata?
+spyder.api.fo_mcx = ${spyder.api.base_url}/MCXAPI?
+spyder.api.fo_currency = ${spyder.api.base_url}/CurrencyAPI?
+spyder.api.fo_api = ${spyder.api.base_url}/FOAPI?
+spyder.api.fo_rollover = ${spyder.api.base_url}/FOrollover_API?
+spyder.api.top_gainers.equity = ${spyder.api.base_url}/Top20_Equity?
+spyder.api.top_gainers.derivatives=${spyder.api.base_url}/PriceGainers_NSEFO?
+spyder.api.top_gainers.currency= ${spyder.api.base_url}/PriceGainers_Currency?
+spyder.api.top_gainers.commodity=${spyder.api.base_url}/PriceGainers_MCX?
+spyder.api.top_losers.equity = ${spyder.api.base_url}/Worst20_Equity?
+spyder.api.top_losers.derivatives=${spyder.api.base_url}/PriceLosers_NSEFO?
+spyder.api.top_losers.currency= ${spyder.api.base_url}/PriceLosers_Currency?
+spyder.api.top_losers.commodity=${spyder.api.base_url}/PriceLosers_MCX?
+spyder.api.oi_gainers.derivatives=${spyder.api.base_url}/OIGainer_NSEFO?
+spyder.api.oi_gainers.currency= ${spyder.api.base_url}/OIGainer_Currency?
+spyder.api.oi_gainers.commodity=${spyder.api.base_url}/OIGainer_MCX?
+spyder.api.oi_losers.derivatives=${spyder.api.base_url}/OILosers_NSEFO?
+spyder.api.oi_losers.currency= ${spyder.api.base_url}/OIlosser_Currency?
+spyder.api.oi_losers.commodity=${spyder.api.base_url}/OIlosser_MCX?
+spyder.api.most_active_by_volume.equity=${spyder.api.base_url}/MostActiveByVolume_Equity?
+spyder.api.most_active_by_volume.derivatives=${spyder.api.base_url}/MostActiveByVolume_NSEFO?
+spyder.api.most_active_by_volume.commodity=${spyder.api.base_url}/MostActiveByVolume_MCX?
+spyder.api.most_active_by_volume.currency=${spyder.api.base_url}/MostActiveByVolume_Currency?
+spyder.api.most_active_by_value.equity=${spyder.api.base_url}/MostActiveByValue_Equity?
+spyder.api.most_active_by_value.derivatives=${spyder.api.base_url}/MostActiveByValue_NSEFO?
+spyder.api.most_active_by_value.currency=${spyder.api.base_url}/MostActiveByValue_Currency?
+spyder.api.most_active_by_value.commodity=${spyder.api.base_url}/MostActiveByValue_MCX?
+spyder.api.all_time_high.equity=${spyder.api.base_url}/Alltimehigh_API?
+spyder.api.all_time_low.equity=${spyder.api.base_url}/Alltimelow_API?
+spyder.api.upper_circuit.equity=${spyder.api.base_url}/UpperCkt_API?
+spyder.api.lower_circuit.equity=${spyder.api.base_url}/LowerCkt_API?
+spyder.api.weeks_high.equity=${spyder.api.base_url}/52weekhigh_API?
+spyder.api.weeks_low.equity=${spyder.api.base_url}/52weeklow_API?
+spyder.api.price_shockers.equity=${spyder.api.base_url}/PriceShockers_Equity?
+spyder.api.volume_shockers.equity=${spyder.api.base_url}/VolumeShocker_Equity?
+spyder.api.oi_analysis_derivatives=${spyder.api.base_url}/OIAnlaysisDeri?
+spyder.api.oi_analysis_commodity=${spyder.api.base_url}/OIAnlaysisMCX?
+spyder.api.rollover_analysis=${spyder.api.base_url}/RollOverAnalysis?
+
+#MARKETS CONFIG
+market_limit=5
+fii_dii_all_limit = 1
+fii_dii_others_limit = 4
+news_limit=20
+
+market_open_hour_eq = 9
+market_open_minute_eq = 14
+market_open_hour_other = 8
+market_open_minute_other = 59
+
+market_movers.default_index=Nifty 500
+market_limit_non_equity = 25
+market_limit_equity = 5
+
+#ORDERPAD WARN MESSAGES
+warn.trade_to_trade=This is a Trade to Trade(T2T) scrip\, hence same day buy and sell will result in compulsory delivery
+
+ft.api.sleep.millis=500
+
+#When the following value is true, it will use exch-streamer and when it is false, omdf feed will be used
+quote_data.use_exch_quote_updater=true
+
+dealerId=RESERVEDPG
+password=ftodin1
+
+#WCF Details
+soapEndpointUrl=http://192.168.200.162/UserCreationWCFService/UserCreation.svc/soap
+soapActionLogin=http://tempuri.org/UserCreation/Login
+soapActionLogOff=http://tempuri.org/UserCreation/LogOff
+soapActionPGUpdate=http://tempuri.org/UserCreation/UpdatePGLimits
+
+#RAZORPAY
+razorpay.api.base_url=https://api.razorpay.com/v1
+razorpay.api.createOrder=${razorpay.api.base_url}/orders
+razorpay.api.paymentStatus=${razorpay.api.base_url}/orders/%s/payments
+razorpay.api.orderStatus=${razorpay.api.base_url}/orders/%s
+
+razorpay.api.validateVPA=${razorpay.api.base_url}/payments/validate/vpa
+razorpay.key_id=rzp_test_ncAi45xs1kkLch
+razorpay.key_secret=CXRyFds6oWSVA1XRSxOw0yHv
+client.ip.adress=21.21.21.60
+
+#Globe Beneficiary details
+globe.beneficiary.bank.name=HDFC Bank
+globe.beneficiary.name=Globe Capital Market Ltd.
+globe.beneficiary.account.name=GLOBRT
+globe.beneficiary.account.number.payin.api=05982340005818
+globe.beneficiary.account.number=00030340003560
+globe.beneficiary.ifsc.code=HDFC0000003
+globe.beneficiary.account.type=Current
+globe.beneficiary.disclaimer.header=Transfer time for RTGS/ NEFT/ IMPS -| up to 24hrs.
+globe.beneficiary.disclaimer.content=For RTGS/ NEFT/ IMPS transaction you need to Visit  your Bank App or website of account registered with globe. Add Globe Capital Market Ltd.  as beneficiary and make fund transfers. If  you are a HDFC bank account holder\, visit bank  website and use e-CMS option in add beneficiary OR  open HDFC Bank App\, go to "Add payee" and fill the  details under merchant tab. \n \n Funds received from an unregistered bank will not  reflect in your trading account. Also\, we will be unable  to update your limits or make a refund. To add a new  Bank account please
+
+#CDSL TPIN API
+cdsl.generate.tpin=https://edis.cdslindia.com/eDISService/GenerateBOPin
+edis.tpin.secretKey=zcyedh1nfcng7abzqwqzia61quygedek
+
+transaction.max.range=01 Apr 2021
+
+#Special Version Update Config
+isSpecialVersionUpdate=true
+versionUpdateIgnoreVersions=1.0.32,1.0.31,1.0.30
+isMandatory=true
+versionUpdate.releaseNotes=Bug fixes and enhancements
+versionUpdate.releaseUrl.android=https://play.google.com/store/apps/details?id=com.globecapital.prod
+versionUpdate.releaseUrl.ios=https://apps.apple.com/us/app/globe-trade-pro-share-trading/id1545938530
+versionUpdate.upgradeToVersion=1.0.32
+
+#Streaming Check constants
+equity.market.startHour=9
+equity.market.startMins=15
+equity.market.endHour=15
+equity.market.endMins=30
+currency.market.startHour=9
+currency.market.startMins=15
+currency.market.endHour=17
+currency.market.endMins=0
+commodity.market.endHour=23
+commodity.market.endMins=30
+
+currency_min_lot_size=1000
+
+#Order Margin
+showOrderMargin=false
+
+#OMEX	
+omex.api.url=http://uat.globecapitalonline.com:4000	
+omex.api.authenticate=${omex.api.url}/Authenticate	
+omex.api.registerAPIRequest=${omex.api.url}/RegisterAPIRequest	
+API_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDdXN0b21lcklkIjoiMzI0Iiwibk5vZGVMaWNlbnNlRXhwaXJ5IjoiMTY3NjQxOTIwMCIsImlhdCI6MTY3Mzg0NDU5MX0.IqonBbwnk-4KU8EmIeXXUvDdMMBqw7lk-l1Ye5Dlff0	
+SECRET_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuTm9kZUxpY2Vuc2VFeHBpcnkiOiIxNjc2NDE5MjAwIiwiQ3VzdG9tZXJJZCI6IjMyNCIsImlhdCI6MTY3Mzg0NDU5MX0.0_DZbfj3nC40RVX-Knp5rvVpkamGxQx1VvY7fiAiD6o
+getomexmessage.api.url=http://mdev-ws.globextranet.com:4500/gcservices-test/Odin/OMEX/GetOMEXMessage	
+CONNECTION_MODE=1	
+isPositionUpdate=true
+isHoldingUpdate=true

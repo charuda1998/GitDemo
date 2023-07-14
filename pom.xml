@@ -1,0 +1,574 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.msf.globecapital</groupId>
+	<artifactId>gcservices</artifactId>
+	<version>1.0.0</version>
+	<packaging>war</packaging>
+	<description>GlobeCapital Services</description>
+	<dependencies>
+		<dependency>
+    		<groupId>javax.xml.bind</groupId>
+    		<artifactId>jaxb-api</artifactId>
+    		<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.msf.libs</groupId>
+			<artifactId>sbu2lib</artifactId>
+			<version>1.1.8</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20190722</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>1.9</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-dbcp</artifactId>
+			<version>9.0.58</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-cli</groupId>
+			<artifactId>commons-cli</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.msf.libs.monitoring</groupId>
+			<artifactId>jmx</artifactId>
+			<version>1.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>de.viaboxx</groupId>
+			<artifactId>log4j-nagios-appender</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.28</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.msf.libs</groupId>
+			<artifactId>cmots</artifactId>
+			<version>1.1.3</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.msf.libs</groupId>
+			<artifactId>msf_log</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>axis</groupId>
+			<artifactId>axis-saaj</artifactId>
+			<version>1.3</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>com.opencsv</groupId>
+    		<artifactId>opencsv</artifactId>
+    		<version>3.8</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>redis.clients</groupId>
+		    <artifactId>jedis</artifactId>
+		    <version>3.6.0</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>org.jvnet.mimepull</groupId>
+			<artifactId>mimepull</artifactId>
+			<version>1.9.3</version>
+		</dependency> -->
+
+		<!-- <dependency> -->
+		<!-- <groupId>com.msf.libs</groupId> -->
+		<!-- <artifactId>soapclient</artifactId> -->
+		<!-- <version>1.0.0</version> -->
+		<!-- </dependency> -->
+	</dependencies>
+	<properties>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+	<profiles>
+		<profile>
+			<id>dev-qa</id>
+			<build>
+				<finalName>gcservices</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.2</version>
+						<configuration>
+							<source>1.7</source>
+							<target>1.7</target>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="src/main/webapp/META-INF/context.xml" />
+										<delete
+											file="${project.build.outputDirectory}/config.properties" />
+										<delete
+											file="${project.build.outputDirectory}/jslog.properties" />
+										<copy file="src/main/webapp/META-INF/context_dev.xml"
+
+											tofile="src/main/webapp/META-INF/context.xml" />
+										<copy
+											file="src/main/resources/config_qa.properties.exclude"
+
+											tofile="${project.build.outputDirectory}/config.properties" />
+										<copy
+											file="src/main/resources/jslog_dev.properties.exclude"
+
+											tofile="${project.build.outputDirectory}/jslog.properties" />
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.3</version>
+						<configuration>
+							<packagingExcludes>WEB-INF/classes/*.exclude</packagingExcludes>
+							<packagingExcludes>META-INF/*.exclude</packagingExcludes>
+							<failOnMissingWebXml>false</failOnMissingWebXml>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.tomcat.maven</groupId>
+						<artifactId>tomcat7-maven-plugin</artifactId>
+						<version>2.1</version>
+						<configuration>
+							<url>https://mdev-ws.globextranet.com:8443/manager/text</url>
+							<server>globecapital-dev</server>
+							<path>/gcservices-test</path>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<build>
+				<finalName>gcservices</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.2</version>
+						<configuration>
+							<source>1.7</source>
+							<target>1.7</target>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="src/main/webapp/META-INF/context.xml" />
+										<delete
+											file="${project.build.outputDirectory}/config.properties" />
+										<delete
+											file="${project.build.outputDirectory}/jslog.properties" />
+										<copy file="src/main/webapp/META-INF/context_prod.xml"
+
+											tofile="src/main/webapp/META-INF/context.xml" />
+										<copy
+											file="src/main/resources/config_prod.properties.exclude"
+
+											tofile="${project.build.outputDirectory}/config.properties" />
+										<copy
+											file="src/main/resources/jslog_prod.properties.exclude"
+
+											tofile="${project.build.outputDirectory}/jslog.properties" />
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.3</version>
+						<configuration>
+							<packagingExcludes>WEB-INF/classes/*.exclude</packagingExcludes>
+							<packagingExcludes>META-INF/*.exclude</packagingExcludes>
+							<failOnMissingWebXml>false</failOnMissingWebXml>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>pre-prod</id>
+			<build>
+				<finalName>gcservices-pilot</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.2</version>
+						<configuration>
+							<source>1.7</source>
+							<target>1.7</target>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="src/main/webapp/META-INF/context.xml" />
+										<delete
+											file="${project.build.outputDirectory}/config.properties" />
+										<delete
+											file="${project.build.outputDirectory}/jslog.properties" />
+										<copy file="src/main/webapp/META-INF/context_pre_prod.xml"
+
+											tofile="src/main/webapp/META-INF/context.xml" />
+										<copy
+											file="src/main/resources/config_pre_prod.properties.exclude"
+
+											tofile="${project.build.outputDirectory}/config.properties" />
+										<copy
+											file="src/main/resources/jslog_pre_prod.properties.exclude"
+
+											tofile="${project.build.outputDirectory}/jslog.properties" />
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.3</version>
+						<configuration>
+							<packagingExcludes>WEB-INF/classes/*.exclude</packagingExcludes>
+							<packagingExcludes>META-INF/*.exclude</packagingExcludes>
+							<failOnMissingWebXml>false</failOnMissingWebXml>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<build>
+				<finalName>gcservices-pilot</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.2</version>
+						<configuration>
+							<source>1.7</source>
+							<target>1.7</target>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="src/main/webapp/META-INF/context.xml" />
+										<delete
+											file="${project.build.outputDirectory}/config.properties" />
+										<delete
+											file="${project.build.outputDirectory}/jslog.properties" />
+										<copy file="src/main/webapp/META-INF/context_pre_prod.xml"
+
+											tofile="src/main/webapp/META-INF/context.xml" />
+										<copy
+											file="src/main/resources/config_pre_prod.properties.exclude"
+
+											tofile="${project.build.outputDirectory}/config.properties" />
+										<copy
+											file="src/main/resources/jslog_pre_prod.properties.exclude"
+
+											tofile="${project.build.outputDirectory}/jslog.properties" />
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.3</version>
+						<configuration>
+							<packagingExcludes>WEB-INF/classes/*.exclude</packagingExcludes>
+							<packagingExcludes>META-INF/*.exclude</packagingExcludes>
+							<failOnMissingWebXml>false</failOnMissingWebXml>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>prod-dr</id>
+			<build>
+				<finalName>gcservices</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.2</version>
+						<configuration>
+							<source>1.7</source>
+							<target>1.7</target>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="src/main/webapp/META-INF/context.xml" />
+										<delete
+											file="${project.build.outputDirectory}/config.properties" />
+										<delete
+											file="${project.build.outputDirectory}/jslog.properties" />
+										<copy file="src/main/webapp/META-INF/context_prod.xml"
+
+											tofile="src/main/webapp/META-INF/context.xml" />
+										<copy
+											file="src/main/resources/config_prod_dr.properties.exclude"
+
+											tofile="${project.build.outputDirectory}/config.properties" />
+										<copy
+											file="src/main/resources/jslog_prod.properties.exclude"
+
+											tofile="${project.build.outputDirectory}/jslog.properties" />
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.3</version>
+						<configuration>
+							<packagingExcludes>WEB-INF/classes/*.exclude</packagingExcludes>
+							<packagingExcludes>META-INF/*.exclude</packagingExcludes>
+							<failOnMissingWebXml>false</failOnMissingWebXml>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>jobs-dev</id>
+			<properties>
+				<packaging>jar</packaging>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>org.apache.tomcat</groupId>
+					<artifactId>tomcat-dbcp</artifactId>
+					<version>8.0.5</version>
+				</dependency>
+			</dependencies>
+			<build>
+				<finalName>dev-jobs</finalName>
+				<plugins>
+					<plugin>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.5.1</version>
+						<configuration>
+							<source>1.8</source>
+							<target>1.8</target>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="src/main/webapp/META-INF/context.xml" />
+										<delete
+											file="${project.build.outputDirectory}/config.properties" />
+										<delete
+											file="${project.build.outputDirectory}/jslog.properties" />
+										<copy file="src/main/webapp/META-INF/context_dev.xml"
+
+											tofile="src/main/webapp/META-INF/context.xml" />
+										<copy
+											file="src/main/resources/config_jobs_dev.properties.exclude"
+
+											tofile="${project.build.outputDirectory}/config.properties" />
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.3</version>
+						<configuration>
+							<packagingExcludes>WEB-INF/classes/*.exclude</packagingExcludes>
+							<packagingExcludes>META-INF/*.exclude</packagingExcludes>
+							<failOnMissingWebXml>false</failOnMissingWebXml>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-assembly-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>single</goal>
+								</goals>
+								<configuration>
+									<descriptorRefs>
+										<descriptorRef>jar-with-dependencies</descriptorRef>
+									</descriptorRefs>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>jobs-prod</id>
+			<properties>
+				<packaging>jar</packaging>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>org.apache.tomcat</groupId>
+					<artifactId>tomcat-dbcp</artifactId>
+					<version>8.0.5</version>
+				</dependency>
+			</dependencies>
+			<build>
+				<finalName>globe-jobs</finalName>
+				<plugins>
+					<plugin>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.5.1</version>
+						<configuration>
+							<source>1.8</source>
+							<target>1.8</target>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="src/main/webapp/META-INF/context.xml" />
+										<delete
+											file="${project.build.outputDirectory}/config.properties" />
+										<copy
+											file="src/main/resources/config_jobs_prod.properties.exclude"
+
+											tofile="${project.build.outputDirectory}/config.properties" />
+										<copy
+											file="src/main/resources/jslog_news_prod.properties.exclude"
+											tofile="${project.build.outputDirectory}/jslog.properties" />
+											
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.3</version>
+						<configuration>
+							<packagingExcludes>WEB-INF/classes/*.exclude</packagingExcludes>
+							<packagingExcludes>META-INF/*.exclude</packagingExcludes>
+							<failOnMissingWebXml>false</failOnMissingWebXml>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-assembly-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>single</goal>
+								</goals>
+								<configuration>
+									<descriptorRefs>
+										<descriptorRef>jar-with-dependencies</descriptorRef>
+									</descriptorRefs>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
+

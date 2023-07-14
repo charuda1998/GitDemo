@@ -1,0 +1,184 @@
+# LOG LEVEL:  1 for info, 2 for info and debug
+log_level=2
+
+# LOG FOLDER NAME
+namespace=jobs
+
+# LOG FILE NAME
+filename=gc-jobs.log
+
+# LOGGING TYPE: value should be either 'remote' or 'local'
+type=remote
+
+# CENTRAL LOGGER CONFIG
+url=onm.globecapital.com:5679
+
+# LOCAL LOGGER CONFIG
+filepath=/home/gcmlit/Logs/production/jobs/gc-jobs.log
+
+log4jpath=/home/gcmlit/Middleware/gc-jobs/config/log4j2.properties
+
+#API timeout in milliseconds
+http.connection_timeout = 150000
+http.read_timeout = 300000
+#Audit Transaction Dump
+audit.scrip=/home/gcmlit/etc/init.d/audit.sh
+audit.file=/home/gcmlit/Middleware/gc-jobs/Audit
+
+#SCRIPMASTER CRON CONFIG
+equities=1,3
+segments=2,5,13
+exchanges=nse,bse
+
+#FT API CONFIG
+moon.api.base_url=http://jobs.globecapitalonline.com/RestAPIService
+moon.api.login=${moon.api.base_url}/NetNet/Login
+moon.api.scripMaster=${moon.api.base_url}/Trading/ScripMaster
+moon.api.Index=${moon.api.base_url}/Trading/LoadIndexScrips
+
+#FTLOGIN API ENCRYPTION CONFIG
+moon.login.encryption.modulus=lnLDMeWvTgO17E50M5DQ1dbMLMKfOv2YclgyJIs+6Bls+/0ngDiLtROdMYBftJwQYD8g9OSJ5p2uMxVFucSFOG9Cwjy2g5+yw910TIYIVrmB3mHV8U9yoVNYq8ZXoc/r/MnCNDsnJv4HBeP4HcSM7IlyIYFX64HPJDztuimqUFs=
+moon.login.encryption.exponent=AQAB
+
+#CMOTS API CONFIG
+cmots.timeout.connectiontimeout=20000
+cmots.timeout.readtimeout=20000
+cmots.authorization.token= bearer hevm1ZZJ8DoSy-ranNUdPxtcn7P7khX5Jd6YAHHdYwi69Yaz0aBcM_nUDKBTYB1NuykR35A_2FGAJSul73jMcw1yP98Kg8C0tILc51TcBJZe3rsjemXTUT6edG0zKo3SK7kcmKwn2_vudx8WNniLMe1KZlS58IdKYki13PCwjHQU6767kLu9LzGEV4LEHPozbJ_bIl9PSI1dNXuQ_zzPIuCJbxljjc7qQJOqSOK5VM6tmkvyLDBGhJT8O_aLx6Sui4jV-X8pqTj9wA8Wd_H2YxnsiFXnzzUfOF-1da0lZ2WMdHsfqFTOuMpyTY_QpxHtruBOG7af9_LYzwO-dMG2dA
+cmots.url.api.market=http://globecapitalapi.cmots.com/api/
+cmots.url.api.company_master=CompanyMaster
+cmots.url.api.index_constituents=IndexConstituents/%s/%s
+cmots.url.api.index_performance=IndexPerformance/%s
+
+#LIVESQUAWK API CONFIG
+lsUrl=https://news.redboxglobal.in/api/news/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhpbWFuc2h1am9zaGlAZ2xvYmVjYXBpdGFsLmNvbSIsImlhdCI6MTYzODUxMDI0Mn0.pw3KPxE0fKHQvo6u66DB2wx2kxs3Hr7gCkrnGSUKmQ8
+
+
+#AMO CRON CONFIG
+amo_configuration = API 
+
+#GC AMO API CONFIG
+gc.api.base_url = https://globemks.globecapital.in/BOService.svc
+gc.api.sid = GLOBE123
+gc.api.userName = TEST001
+gc.api.password = 123TEST
+gc.api.getLogin = ${gc.api.base_url}/GETLOGIN?SID=
+gc.api.getAMODetails = ${gc.api.base_url}/GETTRDHOLIDAY?SID=
+gc.api.AuthToken=R0xPQkVBUEk=
+
+#DATABASE CONFIG
+db.adapter = MySQL
+db.driver_class = com.mysql.jdbc.Driver
+db.gc.url= jdbc:mysql://db.globecapital.com:3306/globecapital?autoReconnect=true
+db.quote.url= jdbc:mysql://db.globecapital.com:3306/quote?autoReconnect=true
+db.chart.url= jdbc:mysql://db.globecapital.com:3306/chart?autoReconnect=true
+db.news.url= jdbc:mysql://db.globecapital.com:3306/news?autoReconnect=true
+db.audit.url= jdbc:mysql://db.globecapital.com:3306/audit?autoReconnect=true
+db.quoteData.url= jdbc:mysql://db.globecapital.com:3306/QUOTE_DATA?autoReconnect=true
+db.username = platformwrite
+db.password = gcwrite
+
+#JMX MONITOR CONFIG
+jmx.url=com.msf.monitoring.prod:
+jmx.beans.MSF_DB=${jmx.url}type=MSF_DB
+gcservices.jmx.beans.GLOBECAPITAL_DB=${jmx.url}type=GLOBECAPITAL_DB
+gcservices.jmx.beans.QUOTE_DB=${jmx.url}type=QUOTE_DB
+gcservices.jmx.beans.CHART_DB=${jmx.url}type=CHART_DB
+gcservices.jmx.beans.NEWS_DB=${jmx.url}type=NEWS_DB
+gcservices.jmx.beans.SPYDER_API=${jmx.url}type=SPYDER_API
+gcservices.jmx.beans.GC_API=${jmx.url}type=GC_API
+
+nagios.path = /home/gcmlit/Middleware/nagios-monit-files
+nagios.beans.SCRIPMASTER_DUMP = ${nagios.path}/SCRIPMASTER_DUMP
+nagios.beans.SCRIPMASTER_DUMP_NSE = ${nagios.path}/SCRIPMASTER_DUMP_NSE
+nagios.beans.SCRIPMASTER_DUMP_BSE = ${nagios.path}/SCRIPMASTER_DUMP_BSE
+nagios.beans.SCRIPMASTER_DUMP_NFO = ${nagios.path}/SCRIPMASTER_DUMP_NFO
+nagios.beans.SCRIPMASTER_DUMP_MCX = ${nagios.path}/SCRIPMASTER_DUMP_MCX
+nagios.beans.SCRIPMASTER_DUMP_NCDEX = ${nagios.path}/SCRIPMASTER_DUMP_NCDEX
+nagios.beans.SCRIPMASTER_DUMP_NSECDS = ${nagios.path}/SCRIPMASTER_DUMP_NSECDS
+nagios.beans.SCRIPMASTER_DUMP_BSECDS = ${nagios.path}/SCRIPMASTER_DUMP_BSECDS
+nagios.beans.LOAD_AMO_DETAILS_NSE = ${nagios.path}/LOAD_AMO_DETAILS_NSE
+nagios.beans.LOAD_AMO_DETAILS_BSE = ${nagios.path}/LOAD_AMO_DETAILS_BSE
+nagios.beans.LOAD_AMO_DETAILS_NFO = ${nagios.path}/LOAD_AMO_DETAILS_NFO
+nagios.beans.LOAD_AMO_DETAILS_MCX = ${nagios.path}/LOAD_AMO_DETAILS_MCX
+nagios.beans.LOAD_AMO_DETAILS_NCDEX = ${nagios.path}/LOAD_AMO_DETAILS_NCDEX
+nagios.beans.LOAD_AMO_DETAILS_NSECDS = ${nagios.path}/LOAD_AMO_DETAILS_NSECDS
+nagios.beans.LOAD_AMO_DETAILS_BSECDS = ${nagios.path}/LOAD_AMO_DETAILS_BSECDS
+nagios.beans.LOAD_AMO_DETAILS = ${nagios.path}/LOAD_AMO_DETAILS
+nagios.beans.PREDEFINED_WATCHLIST_NSE = ${nagios.path}/PREDEFINED_WATCHLIST_NSE
+nagios.beans.PREDEFINED_WATCHLIST_BSE = ${nagios.path}/PREDEFINED_WATCHLIST_BSE
+nagios.beans.SENSEX_SYMBOLS = ${nagios.path}/SENSEX_SYMBOLS
+nagios.beans.NIFTY50_SYMBOLS = ${nagios.path}/NIFTY50_SYMBOLS
+nagios.beans.NIFTY_BANK_SYMBOLS = ${nagios.path}/NIFTY_BANK_SYMBOLS
+nagios.beans.NIFTY_PHARMA_SYMBOLS = ${nagios.path}/NIFTY_PHARMA_SYMBOLS
+nagios.beans.NIFTY_SMALL100_SYMBOLS = ${nagios.path}/NIFTY_SMALL100_SYMBOLS
+nagios.beans.INDICES_LOGIN = ${nagios.path}/INDICES_LOGIN
+nagios.beans.INDICES_NSE = ${nagios.path}/INDICES_NSE
+nagios.beans.INDICES_BSE = ${nagios.path}/INDICES_BSE
+nagios.beans.INDICES_NFO = ${nagios.path}/INDICES_NFO
+nagios.beans.INDICES_NSECDS = ${nagios.path}/INDICES_NSECDS
+nagios.beans.INDICES_MCX = ${nagios.path}/INDICES_MCX
+nagios.beans.LOAD_NEWS = ${nagios.path}/LOAD_NEWS
+nagios.beans.AUDIT_TRANSACTIONS = ${nagios.path}/AUDIT_TRANSACTIONS
+
+#NAGIOS PASSIVE MONITOR CONFIG
+nagios.nsca.hostName = passive-monitor
+nagios.nsca.host = 21.21.21.40
+nagios.nsca.port = 5667
+nagios.nsca.encryption = NONE
+nagios.nsca.password = [password]
+nagios.nsca.monitor.stats = true
+
+#CMOTS CRON CONFIG
+air_transport_service = Aviation
+bearings = Auto Ancillaries
+capital_goods_-_electrical_equipment = Capital Goods
+capital_goods-non_electrical_equipment = Capital Goods
+castings,_forgings_&_fastners = Castings & Forgings
+computer_education = Education
+diamonds,_gems_and_jewellery = Jewellery
+e-commerce/app_based_aggregator = E-Commerce
+etf = Finance
+infrastructure_developers_&_operators = Infrastructure
+infrastructure_investment_trusts = Infrastructure
+media_-_print/television/radio = Media
+oil_drill/allied = Oil Drill
+paints/varnish = Paints
+plantation_&_plantation_products = Plantation
+readymade_garments/_apparells = Readymade Garments
+real_estate_investment_trusts = Real Estate
+realty = Real Estate
+telecom-handsets/mobile = Telecom
+telecomm_equipment_&_infra_services = Telecom
+telecomm-service = Telecom
+
+#Poll Order
+clientIp=21.21.21.60
+dealerId=RESERVEDPG
+password=ftodin1
+gc.api.base_url_uat=https://globemks.globecapital.in/BOService.svc
+gc.api.getPayinTransactions=${gc.api.base_url_uat}/GETFUNDPAYINTRXN
+
+#WCF Details
+soapEndpointUrl=http://21.21.21.60/UserCreationWCFService/UserCreation.svc/soap
+soapActionLogin=http://tempuri.org/UserCreation/Login
+soapActionLogOff=http://tempuri.org/UserCreation/LogOff
+soapActionPGUpdate=http://tempuri.org/UserCreation/UpdatePGLimits
+
+#RAZORPAY
+razorpay.api.base_url=https://api.razorpay.com/v1
+razorpay.api.paymentStatus=${razorpay.api.base_url}/orders/%s/payments
+razorpay.api.orderStatus=${razorpay.api.base_url}/orders/%s
+razorpay.key_id=rzp_live_hmX6SA0vW8DMHI
+razorpay.key_secret=w45DTZ9Qdnwde90YKBpQc2ck
+
+#Globe Beneficiary details
+globe.beneficiary.account.number.payin.api=05982340005818
+
+#OMEX	
+omex.api.url=http://21.21.21.62:4000
+omex.api.authenticate=${omex.api.url}/Authenticate	
+omex.api.registerAPIRequest=${omex.api.url}/RegisterAPIRequest	
+API_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDdXN0b21lcklkIjoiMzI0Iiwibk5vZGVMaWNlbnNlRXhwaXJ5IjoiMTY3OTI3MDQwMCIsImlhdCI6MTY3MzI3MDU0MX0.NJAjYKwWpqS5noV-gAyZZXY8_sdIQ3w9IPth5PvJ46k
+SECRET_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuTm9kZUxpY2Vuc2VFeHBpcnkiOiIxNjc5MjcwNDAwIiwiQ3VzdG9tZXJJZCI6IjMyNCIsImlhdCI6MTY3MzI3MDU0MX0.oSmNlZJ8PSK39gfToGkpAOEOJhPNYXzFyJDg8Sh-T9w
+getomexmessage.api.url=http://21.21.21.40/gcservices/Odin/OMEX/GetOMEXMessage
+CONNECTION_MODE=1

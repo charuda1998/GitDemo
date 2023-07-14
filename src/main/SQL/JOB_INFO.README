@@ -1,0 +1,31 @@
+Database : globecapital
+Table : JOB_INFO
+
+This table contains the userid, paassword and config needed for the corresponding job.
+
+'CONFIG' value for the job 'FTIndicesDump' contains the list of indices in each segment that should be displayed in the application.
+
+The order of the appearence of the indices in the application corresponds to the order on the indices list specified in the CONFIG column.
+
+If the order of indices shown in the application needs to be changed, then the devoloper needds to change the order in the indices list in CONFIG column and run the job once.
+
+This is applicable for addition of indices to be displayed also in which case the devoloper needs to add the indices in CONFIG column and run the job once.
+
+The parameters in the CONFIG column corresponds as follows :
+
+	equities - Market Segment Ids for the Equity segment
+
+	equity_index - List of Equity indices to be shown in the Overview screen
+
+	equity_all_index - List of Equity indices to be shown in the See All screen
+
+	derivative_index - List of derivative indices to be get from API
+
+	derivative_scrip_index - List of derivative scrips to be get from SCRIPMASTER table
+
+	currency_scrip_index - List of currency scrips to be get from SCRIPMASTER table
+
+	commodity_scrip_index - List of commodity scrips to be get from SCRIPMASTER table
+
+
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<!-- the ssg database that contains admin username and password and database 
+		connection pooling -->
+	<Resource name="jdbc/globecapital" auth="Container"
+		type="javax.sql.DataSource"
+		 username="platformwrite"
+		password="gcwrite"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://db.globecapital.com:3306/globecapital?autoReconnect=true" 
+		initialSize="100" maxIdle="100" maxTotal="400" maxWaitMillis="10000" />
+		
+	<Resource name="jdbc/news" auth="Container"
+		type="javax.sql.DataSource"
+		 username="platformwrite"
+		password="gcwrite"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://db.globecapital.com:3306/news?autoReconnect=true"
+		initialSize="50" maxIdle="50" maxTotal="300" maxWaitMillis="10000" />
+		
+	<Resource name="jdbc/quote_data" auth="Container"
+		type="javax.sql.DataSource"
+		 username="platformwrite"
+		password="gcwrite"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://quote-db.globecapital.com:3306/QUOTE_DATA?autoReconnect=true"
+		initialSize="100" minIdle="100" maxIdle="400" maxWaitMillis="10000" />	
+</Context>

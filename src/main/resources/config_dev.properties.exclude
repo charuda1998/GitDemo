@@ -1,0 +1,303 @@
+#GENERAL CONFIG
+unit_testing.enabled=true
+service_maintenance=false
+
+#AUDIT CONFIG
+app.needAudit=false
+app.needLogAudit=true
+
+#WEBSERVICE CONFIG
+webservice.encrypt.key = globecapital2020
+
+#ORDER CONFIG
+order.validateDPR=true
+order.validateDPRForAMO=false
+order.lastUsedProdType=true
+disclosed_qty_min_percent_non_commodity = 10
+disclosed_qty_min_percent_commodity = 25
+
+#LOGIN CONFIG
+advancelogin.check_different_device = false
+
+#API timeout in milliseconds
+http.connection_timeout = 10000
+http.read_timeout = 20000
+
+#DATABASE CONFIG
+db.adapter = MySQL
+db.driver_class = com.mysql.jdbc.Driver
+db.gc.url= jdbc:mysql://db.globecapital.com:3306/globecapital?autoReconnect=true
+db.quote.url= jdbc:mysql://db.globecapital.com:3306/quote?autoReconnect=true
+db.chart.url= jdbc:mysql://db.globecapital.com:3306/chart?autoReconnect=true
+db.news.url= jdbc:mysql://db.globecapital.com:3306/news?autoReconnect=true
+db.username = root
+db.password = roadrunner
+
+#JMX MONITORING CONFIG
+jmx.url=com.msf.gcservices.monitoring.dev:
+gcservices.jmx.beans.GLOBECAPITAL_DB=${jmx.url}type=GLOBECAPITAL_DB
+gcservices.jmx.beans.QUOTE_DB=${jmx.url}type=QUOTE_DB
+gcservices.jmx.beans.CHART_DB=${jmx.url}type=CHART_DB
+gcservices.jmx.beans.NEWS_DB=${jmx.url}type=NEWS_DB
+gcservices.jmx.beans.FT_API=${jmx.url}type=FT_API
+gcservices.jmx.beans.SPYDER_API=${jmx.url}type=SPYDER_API
+gcservices.jmx.beans.GC_API=${jmx.url}type=GC_API
+gcservices.jmx.beans.CMOTS_CACHE=${jmx.url}type=CMOTS_CACHE
+
+#QUOTECONFIG
+events_count = 6
+peer_comparison_record_count = 100
+
+#EXCHANGE MESSAGES API CONFIG
+ft_get_exchange_messages_hours = 8
+
+#CHARTS CONFIG
+chart_1M_past_days = 30
+chart_iq_url = https://mdev-ws.globextranet.com:8443/web/chartiq-v2/build/index.html
+
+#FTLOGIN API ENCRYPTION CONFIG
+moon.login.encryption.modulus=lnLDMeWvTgO17E50M5DQ1dbMLMKfOv2YclgyJIs+6Bls+/0ngDiLtROdMYBftJwQYD8g9OSJ5p2uMxVFucSFOG9Cwjy2g5+yw910TIYIVrmB3mHV8U9yoVNYq8ZXoc/r/MnCNDsnJv4HBeP4HcSM7IlyIYFX64HPJDztuimqUFs=
+moon.login.encryption.exponent=AQAB
+
+#FUND TRANSFER FT API CONFIG
+pay_in_url = http://125.19.26.230/inetnet/UserAuthentication/AuthenticateUser.aspx?
+
+#FTAPI CONFIG
+moon.api.base_url=http://192.168.200.162/RestAPIService
+moon.api.login=${moon.api.base_url}/NetNet/Login
+moon.api.authenticationStatus=${moon.api.base_url}/NetNet/SetAuthenticationStatus
+moon.api.passwordSettings=${moon.api.base_url}/NetNet/SavePasswordSettings
+moon.api.secretQuestions=${moon.api.base_url}/NetNet/GetSecretQuestions
+moon.api.twoFAAuthenticationApi=${moon.api.base_url}/NetNet/AuthenticateUser
+moon.api.logoff=${moon.api.base_url}/NetNet/LogOff
+moon.api.sendForgotPasswordRequest=${moon.api.base_url}/NetNet/SendForgotpwdRequest
+moon.api.sendOrderRequest=${moon.api.base_url}/Trading/SendOrderRequest
+moon.api.addWatchlist = ${moon.api.base_url}/Trading/SaveMarketWatchProfile
+moon.api.renameWatchlist=${moon.api.base_url}/Trading/RenameMarketWatchProfile
+moon.api.scripMaster=${moon.api.base_url}/Trading/ScripMaster
+moon.api.deleteWatchlistGroup=${moon.api.base_url}/Trading/RemoveMarketWatchProfile
+moon.api.SaveWatchlist=${moon.api.base_url}/Trading/SaveMarketWatchProfile
+moon.api.getProfileScrips=${moon.api.base_url}/Trading/GetProfileScrips
+moon.api.getProfileList=${moon.api.base_url}/Trading/GetProfileList
+moon.api.sendPosConvRequest=${moon.api.base_url}/Trading/SendPosConvRequest
+moon.api.getOrderBook=${moon.api.base_url}/Trading/GetOrderBook
+moon.api.getTradeBook=${moon.api.base_url}/Trading/GetTradeBook
+moon.api.getPeriodicitesForFundsSummary=${moon.api.base_url}/Trading/GetPeriodicitesForFundsSummary
+moon.api.getAdvanceFundsView=${moon.api.base_url}/Trading/GetAdvanceFundsView
+moon.api.getSpanMargin=${moon.api.base_url}/Trading/GetSpanMargin
+moon.api.getNetPosition=${moon.api.base_url}/Trading/GetNetPosition 
+moon.api.computeBracketOrderRange=${moon.api.base_url}/Trading/ComputeBracketOrderRange
+moon.api.GetMarketStatusResponse=${moon.api.base_url}/Trading/GetMarketStatusResponse 
+moon.api.SendForgotpwdRequest = ${moon.api.base_url}/NetNet/SendForgotpwdRequest
+moon.api.ForgotPasswordParam = ${moon.api.base_url}/NetNet/GetForgotPasswordParamList
+moon.api.ScripMaster=${moon.api.base_url}/Trading/ScripMaster 
+moon.api.Index=${moon.api.base_url}/Trading/LoadIndexScrips
+moon.api.getStockView=${moon.api.base_url}/Trading/GetStockView
+moon.api.getExchangeMessages=${moon.api.base_url}/Trading/GetExchangeMessages
+moon.api.generate.otp=${moon.api.base_url}/NetNet/GenerateCipher
+
+#GLOBE API CONFIG
+gc.api.sid = GLOBE123
+gc.api.userName = TEST001
+gc.api.password = 123TEST
+myglobe.api.base_url = https://myglobe.globextranet.com/eipolive
+gc.api.base_url = https://globemks.globecapital.in/BOService.svc
+gc.api.getLogin = ${gc.api.base_url}/GETLOGIN?SID=
+gc.api.getHoldings = ${gc.api.base_url}/GETHOLDING?SID=
+gc.api.getEquityTransaction = ${gc.api.base_url}/GETEQTRXN?SID=
+gc.api.getDerivativeTransaction = ${gc.api.base_url}/GetFotrxn?SID=
+gc.api.getCurrencyTransaction = ${gc.api.base_url}/GETCURTRXN?SID=
+gc.api.getCommodityTransaction = ${gc.api.base_url}/GETCOMTRNX?SID=
+gc.api.getRealisedEquityTransactionScrip = ${gc.api.base_url}/GETEQTRXNSCRIP?SID=
+gc.api.getRealisedDerivativeTransactionScrip = ${gc.api.base_url}/GETFOTRXNSCRIP?SID=
+gc.api.getRealisedCurrencyTransactionScrip = ${gc.api.base_url}/GETCURRTRXNSCRIP?SID=
+gc.api.getRealisedCommodityTransactionScrip = ${gc.api.base_url}/GETCOMMTRXNSCRIP?SID=
+gc.api.getUnRealisedEquityTransactionScrip = ${gc.api.base_url}/GETEQTRXNSCRIPUNREL?SID=
+gc.api.getUnRealisedDerivativeTransactionScrip = ${gc.api.base_url}/GETFOTRXNSCRIPUNREL?SID=
+gc.api.getUnRealisedCurrencyTransactionScrip = ${gc.api.base_url}/GETCURRTRXNSCRIPUNREL?SID=
+gc.api.getUnRealisedCommodityTransactionScrip = ${gc.api.base_url}/GETCOMMTRXNSCRIPUNREL?SID=
+gc.api.getRealisedEquityProfitLoss = ${gc.api.base_url}/GETEQPL?SID=
+gc.api.getRealisedDerivativeProfitLoss = ${gc.api.base_url}/GETFOPL?SID=
+gc.api.getRealisedCurrencyProfitLoss = ${gc.api.base_url}/GETCURRPL?SID=
+gc.api.getRealisedCommodityProfitLoss = ${gc.api.base_url}/GETCOMMPL?SID=
+gc.api.getUnRealisedEquityProfitLoss = ${gc.api.base_url}/GETUNRELPLEQ?SID=
+gc.api.getUnRealisedDerivativeProfitLoss = ${gc.api.base_url}/GETUNRELPLFO?SID=
+gc.api.getUnRealisedCurrencyProfitLoss = ${gc.api.base_url}/GETUNRELPLCUR?SID=
+gc.api.getUnRealisedCommodityProfitLoss = ${gc.api.base_url}/GETUNRELPLCOM?SID=
+gc.api.getEquityTaxReport = ${gc.api.base_url}/GETEQTAXPL?SID=
+gc.api.getDerivativeTaxReport = ${gc.api.base_url}/GETFOTAXPL?SID=
+gc.api.getCurrencyTaxReport = ${gc.api.base_url}/GETCURTAXPL?SID=
+gc.api.getCommodityTaxReport = ${gc.api.base_url}/GETCOMTAXPL?SID=
+gc.api.getBankList = ${gc.api.base_url}/GETCLIENTBANK?SID=
+gc.api.getFundWithdrawalAmt = ${gc.api.base_url}/GETFUNDWITHDRWALAMT?SID=
+gc.api.getFundWithdrawalAmtRequest = ${gc.api.base_url}/GETFUNDWREQUEST?SID=
+gc.api.getFundTransaction=${gc.api.base_url}/GETFUNDWREQSTATUS?SID=
+gc.api.getCancelWithdrawRequest=${gc.api.base_url}/GETFUNDWRCANCELED?SID=
+gc.api.getEquityTransactionEmail= ${gc.api.base_url}/GETEQTRXNMAIL?SID=
+gc.api.getDerivativeTransactionEmail= ${gc.api.base_url}/GETFOTRXNMAIL?SID=
+gc.api.getCurrencyTransactionEmail= ${gc.api.base_url}/GETCURTRXNMAIL?SID=
+gc.api.getCommodityTransactionEmail= ${gc.api.base_url}/GETCOMTRXNMAIL?SID=
+gc.api.getLedgerEmail = ${gc.api.base_url}/GETLEDGERMAIL?SID=
+gc.api.getHoldingsEmail =${gc.api.base_url}/GETHOLDINGMAIL?SID=
+gc.api.getPortfolioEmail = ${gc.api.base_url}/GETPORTFOLIOMAIL?SID=
+gc.api.getEquityTaxEmail=${gc.api.base_url}/GETEQTAXREPORTMAIL?SID=
+gc.api.getDerivativeTaxEmail=${gc.api.base_url}/GETFOTAXREPORTMAIL?SID=
+gc.api.getCurrencyTaxEmail=${gc.api.base_url}/GETCURTAXREPORTMAIL?SID=
+gc.api.getCommodityTaxEmail=${gc.api.base_url}/GETCOMTAXREPORTMAIL?SID=
+gc.api.getRLEquityEmail=${gc.api.base_url}/GETEQPLMAIL?SID=
+gc.api.getRLDerivativeEmail=${gc.api.base_url}/GETFOPLMAIL?SID=
+gc.api.getRLCommodityEmail=${gc.api.base_url}/GETCOMPLMAIL?SID=
+gc.api.getRLCurrencyEmail=${gc.api.base_url}/GETCURPLMAIL?SID=
+gc.api.getContractEmail= ${gc.api.base_url}/GETCNNOTESMAIL?SID=
+gc.api.getEquitySaudaEmail= ${gc.api.base_url}/GETSAUDABILLMAIL?SID=
+gc.api.getDerivativeSaudaEmail= ${gc.api.base_url}/GETFOSAUDABILLMAIL?SID=
+gc.api.getCurrencySaudaEmail= ${gc.api.base_url}/GETCURSAUDABILLMAIL?SID=
+gc.api.getCommoditySaudaEmail= ${gc.api.base_url}/GETCOMSAUDABILLMAIL?SID=
+gc.api.getPortfolio = ${gc.api.base_url}/GETPORTFOLIO?SID=
+gc.api.getLedgerReport = ${gc.api.base_url}/GETLEDGER?SID=
+gc.api.getContractReport = ${gc.api.base_url}/GETPERIODDATECN?SID=
+gc.api.getEquitySaudaReport = ${gc.api.base_url}/GETPERIODDATEEQBILL?SID=
+gc.api.getDerivativeSaudaReport = ${gc.api.base_url}/GETPERIODDATEFOBILL?SID=
+gc.api.getEquityTrxnDownload=${gc.api.base_url}/GETEQTRXNDOWNLOAD?SID=
+gc.api.getDerivativeTrxnDownload=${gc.api.base_url}/GETFOTRXNDOWNLOAD?SID=
+gc.api.getCurrencyTrxnDownload=${gc.api.base_url}/GETCURTRXNDOWNLOAD?SID=
+gc.api.getCommodityTrxnDownload=${gc.api.base_url}/GETCOMTRXNDOWNLOAD?SID=
+gc.api.getEquityPLDownload=${gc.api.base_url}/GETEQPLDOWNLOAD?SID=
+gc.api.getDerivativePLDownload=${gc.api.base_url}/GETPLDOWNLOAD?SID=
+gc.api.getCurrencyPLDownload=${gc.api.base_url}/GETCURPLDOWNLOAD?SID=
+gc.api.getCommodityPLDownload=${gc.api.base_url}/GETCOMPLDOWNLOAD?SID=
+gc.api.getUnRelEquityPLDownload=${gc.api.base_url}/GETUNRELPLEQDOWNLOAD?SID=
+gc.api.getUnRelDerivativePLDownload=${gc.api.base_url}/GETUNRELPLFODOWNLOAD?SID=
+gc.api.getUnRelCurrencyPLDownload=${gc.api.base_url}/GETUNRELPLCURDOWNLOAD?SID=
+gc.api.getUnRelCommodityPLDownload=${gc.api.base_url}/GETUNRELPLCOMDOWNLOAD?SID=
+gc.api.getUnRelEquityPLEmail=${gc.api.base_url}/GETUNRELPLEQMAIL?SID=
+gc.api.getUnRelDerivativePLEmail=${gc.api.base_url}/GETUNRELPLFOMAIL?SID=
+gc.api.getUnRelCurrencyPLEmail=${gc.api.base_url}/GETUNRELPLCURMAIL?SID=
+gc.api.getUnRelCommodityPLEmail=${gc.api.base_url}/GETUNRELPLCOMMAIL?SID=
+gc.api.getLedgerDownload=${gc.api.base_url}/GETLEDGERDOWNLOAD?SID=
+gc.api.getStockDownload=${gc.api.base_url}/GETSTOCKDOWNLOAD?SID=
+gc.api.getPortfolioDownload=${gc.api.base_url}/GETPORTFOLIODOWNLOAD?SID=
+gc.api.getContractDownload=${gc.api.base_url}/GETCONTRACTDOWNLOAD?SID=
+gc.api.getEquitySaudaDownload=${gc.api.base_url}/GETSAUDABILLDOWNLOAD?SID=
+gc.api.getDerivativeSaudaDownload=${gc.api.base_url}/GETFOSAUDABILLDOWNLOAD?SID=
+gc.api.getCurrencySaudaDownload=${gc.api.base_url}/GETCURSAUDABILLDOWNLOAD?SID=
+gc.api.getCommoditySaudaDownload=${gc.api.base_url}/GETCOMSAUDABILLDOWNLOAD?SID=
+gc.api.getEquityTaxDownload=${gc.api.base_url}/GETEQTAXRPTDOWNLOAD?SID=
+gc.api.getDerivativeTaxDownload=${gc.api.base_url}/GETFOTAXPLDOWNLOAD?SID=
+gc.api.getCommodityTaxDownload=${gc.api.base_url}/GETCOMTAXPLDOWNLOAD?SID=
+gc.api.getCurrencyTaxDownload=${gc.api.base_url}/GETCURTAXPLDOWNLOAD?SID=
+gc.api.getPledgeLink=${gc.api.base_url}/GETURLLINK?SID=
+gc.api.getDiscrepancy=${gc.api.base_url}/GETDISCREPANCY?SID=
+gc.api.getResolvedDiscrepancy=${gc.api.base_url}/GETRESOLVEDISCREPANCY?SID=
+gc.api.getResolvedViewDiscrepancy=${gc.api.base_url}/GETRESOLVEDISVIEW?SID=
+gc.api.getDiscrepancyModify=${gc.api.base_url}/GETDISCREPANCYMOD?SID=
+gc.api.getFOCombinedPosition=${gc.api.base_url}/GETFOCOBINEDPOSITION?SID=
+gc.api.getIPOLink=${myglobe.api.base_url}/IPORouterApp?token=
+myglobe.authorization.token=R2xvYmVJUE9BdXRvTG9naW4=
+gc.api.WebLinkAuthToken=QVBJVVJM
+gc.api.AuthToken=R0xPQkVBUEk=
+gc.api.getFundHistory=${gc.api.base_url}/GETFUNDHISTORY?SID=
+MS8=WM106
+
+#GLOBE RESEARCH API CONFIG
+gc.api.getResearchData= http://10.10.11.146:11117/ResearchData.svc/GetData?sid=R0xPQkVSZXNlYXJjaDEyMw==&
+
+
+#CMOTS API CONFIG
+cmots.timeout.connectiontimeout=20000
+cmots.timeout.readtimeout=20000
+cmots.authorization.token= bearer -0m5mhr73gVcHcA79JFouOWnC-5X_EUGq7xC1rucYlDeLOQUQpuuLNLOEaz20OQpSCb2Vi-ZmCgIlK26nLukP153CBfmAYUfIUhVxzF5w-rmbS1bfUp2SkBRoFlL8QjKxRwilLhgKNYCmFhj0iHm2lTgaLcdzLiR--7qGETmm1t2mnwQ1lwvnWR3n9ybJ6m3hdc42yoKoJCBfAa560sVmcrZkjzZ12u3xMD2_nz2eTn1DaGLtO44gfeYnn-WZGJ5e5V1pGEotjTShmLpUqLmLMOfDV9Z1Br0ngJKo4ENs2IW8s6pcwt9zhX-s-1fxKZBkdoDY3CzhZqsAANVWuvvrQ
+cmots.url.api.market=http://globecapitalapi.cmots.com/api/
+cmots.url.api.company_master=CompanyMaster
+cmots.url.api.comp_peer_ratio=CompPeerRatio/%s/%s/%s
+cmots.url.api.key_stats=Keystats/%s/%s/%s
+cmots.url.api.comp_peer_performance=CompPeerPerformance/%s/%s/%s
+cmots.url.api.comp_peer_key_parameters=CompPeerKeyParams/%s/%s/%s
+cmots.url.api.share_holding_equity=ShareHoldingPatternEquity/%s
+cmots.url.api.financials_equity=FinancialsFOQuarterly/%s/%s
+cmots.url.api.margin_ratios=MarginRatios/%s/%s
+cmots.url.api.performance_ratios=PerformanceRatios/%s/%s
+cmots.url.api.efficiency_ratios=EfficiencyRatios/%s/%s
+cmots.url.api.financial_stability_ratios=FinancialStabilityRatios/%s/%s
+cmots.url.api.valuation_ratios=ValuationRatios/%s/%s
+cmots.url.api.growth_ratios=GrowthRatio/%s/%s
+cmots.url.api.liquidity_ratios=LiquidityRatios/%s/%s
+cmots.url.api.cash_flow_ratios=CashFlowRatios/%s/%s
+cmots.url.api.profit_and_loss_year_end=ProfitLossYearEnds/%s/%s
+cmots.url.api.quarterly_balance_sheet=QuarterlyBalanceSheet/%s/%s
+cmots.url.api.yearly_balance_sheet=YearlyBalanceSheet/%s/%s
+cmots.url.api.fno_overview=FNOOverView/%s/%s/%s
+cmots.url.api.expiry=GetExpiryOptions/%s
+cmots.url.api.option_chain=FNOOptionChain/%s/%s
+cmots.url.api.about_company=CompanyBackground/%s
+cmots.url.api.results_quarterly=ResultsQuarterly/%s/%s
+cmots.url.api.results_half_yearly=ResultsHalfYearly/%s/%s
+cmots.url.api.results_yearly=ResultsYearly/%s/%s
+cmots.url.api.consolidated_corporate=ConsolidatedCorportate/%s/%s
+cmots.url.api.fii_dii=FIIDIIData/%s/%s
+cmots.url.api.results_info=ResultsInfo/%s
+cmots.url.api.dividend=Dividend/%s/%s
+cmots.url.api.bonus=Bonus/%s/%s
+cmots.url.api.splits=Splits/%s/%s
+cmots.url.api.rights=Rights/%s/%s
+cmots.url.api.announcement=Announcement/%s
+cmots.url.api.listed_ipo=ListedIPO/%s/%s
+cmots.url.api.index_constituents=IndexConstituents/%s/%s
+cmots.url.api.index_performance=IndexPerformance/%s
+
+#PREDEFINED WATCHLIST CONFIG
+indexNames=NIFTY 50,NIFTY BANK,NIFTY PHARMA,NIFTY SMALL 100,SENSEX
+
+#SPYDER API CONFIG
+spyder.api.base_url = http://125.19.26.228:9192/api/chart
+spyder.api.historical_data = ${spyder.api.base_url}/symbolhistoricaldata?
+spyder.api.fo_mcx = ${spyder.api.base_url}/MCXAPI?
+spyder.api.fo_currency = ${spyder.api.base_url}/CurrencyAPI?
+spyder.api.fo_api = ${spyder.api.base_url}/FOAPI?
+spyder.api.fo_rollover = ${spyder.api.base_url}/FOrollover_API?
+spyder.api.top_gainers.equity = ${spyder.api.base_url}/Top20_Equity?
+spyder.api.top_gainers.derivatives=${spyder.api.base_url}/PriceGainers_NSEFO?
+spyder.api.top_gainers.currency= ${spyder.api.base_url}/PriceGainers_Currency?
+spyder.api.top_gainers.commodity=${spyder.api.base_url}/PriceGainers_MCX?
+spyder.api.top_losers.equity = ${spyder.api.base_url}/Worst20_Equity?
+spyder.api.top_losers.derivatives=${spyder.api.base_url}/PriceLosers_NSEFO?
+spyder.api.top_losers.currency= ${spyder.api.base_url}/PriceLosers_Currency?
+spyder.api.top_losers.commodity=${spyder.api.base_url}/PriceLosers_MCX?
+spyder.api.oi_gainers.derivatives=${spyder.api.base_url}/OIGainer_NSEFO?
+spyder.api.oi_gainers.currency= ${spyder.api.base_url}/OIGainer_Currency?
+spyder.api.oi_gainers.commodity=${spyder.api.base_url}/OIGainer_MCX?
+spyder.api.oi_losers.derivatives=${spyder.api.base_url}/OILosers_NSEFO?
+spyder.api.oi_losers.currency= ${spyder.api.base_url}/OIlosser_Currency?
+spyder.api.oi_losers.commodity=${spyder.api.base_url}/OIlosser_MCX?
+spyder.api.most_active_by_volume.equity=${spyder.api.base_url}/MostActiveByVolume_Equity?
+spyder.api.most_active_by_volume.derivatives=${spyder.api.base_url}/MostActiveByVolume_NSEFO?
+spyder.api.most_active_by_volume.commodity=${spyder.api.base_url}/MostActiveByVolume_MCX?
+spyder.api.most_active_by_volume.currency=${spyder.api.base_url}/MostActiveByVolume_Currency?
+spyder.api.most_active_by_value.equity=${spyder.api.base_url}/MostActiveByValue_Equity?
+spyder.api.most_active_by_value.derivatives=${spyder.api.base_url}/MostActiveByValue_NSEFO?
+spyder.api.most_active_by_value.currency=${spyder.api.base_url}/MostActiveByValue_Currency?
+spyder.api.most_active_by_value.commodity=${spyder.api.base_url}/MostActiveByValue_MCX?
+spyder.api.all_time_high.equity=${spyder.api.base_url}/Alltimehigh_API?
+spyder.api.all_time_low.equity=${spyder.api.base_url}/Alltimelow_API?
+spyder.api.upper_circuit.equity=${spyder.api.base_url}/UpperCkt_API?
+spyder.api.lower_circuit.equity=${spyder.api.base_url}/LowerCkt_API?
+spyder.api.weeks_high.equity=${spyder.api.base_url}/52weekhigh_API?
+spyder.api.weeks_low.equity=${spyder.api.base_url}/52weeklow_API?
+spyder.api.price_shockers.equity=${spyder.api.base_url}/PriceShockers_Equity?
+spyder.api.volume_shockers.equity=${spyder.api.base_url}/VolumeShocker_Equity?
+spyder.api.oi_analysis_derivatives=${spyder.api.base_url}/OIAnlaysisDeri?
+spyder.api.oi_analysis_commodity=${spyder.api.base_url}/OIAnlaysisMCX?
+spyder.api.rollover_analysis=${spyder.api.base_url}/RollOverAnalysis?
+
+#MARKETS CONFIG
+market_limit=5
+fii_dii_all_limit = 1
+fii_dii_others_limit = 4
+news_limit=20
+market_open_hour_eq = 9
+market_open_minute_eq = 14
+market_open_hour_other = 8
+market_open_minute_other = 59
+
+#Order Margin
+showOrderMargin=false

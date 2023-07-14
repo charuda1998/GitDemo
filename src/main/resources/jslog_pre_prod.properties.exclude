@@ -1,0 +1,19 @@
+# LOG LEVEL:  1 for info, 2 for info and debug
+log_level=1
+
+# LOG FOLDER NAME
+namespace=globecapital
+
+# LOG FILE NAME
+filename=gcservices-pilot.log
+
+# LOGGING TYPE: value should be either 'remote' or 'local'
+type=remote
+
+# CENTRAL LOGGER CONFIG
+url=onm.globecapital.com:5679
+
+# LOCAL LOGGER CONFIG
+filepath=/home/gcmlit/Logs/production/globecapital/gcservices-pilot.log
+
+log4jpath=/home/gcmlit/Middleware/tomcat-pilot/webapps/gcservices-pilot/WEB-INF/classes/log4j2.properties

@@ -1,0 +1,19 @@
+# LOG LEVEL:  1 for info, 2 for info and debug
+log_level=2
+
+# LOG FOLDER NAME
+namespace=jobs
+
+# LOG FILE NAME
+filename=news_dump.log
+
+# LOGGING TYPE: value should be either 'remote' or 'local'
+type=remote
+
+# CENTRAL LOGGER CONFIG
+url=onm.globecapital.com:5679
+
+# LOCAL LOGGER CONFIG
+filepath=/home/gcmlit/Logs/production/jobs/news_dump.log
+
+log4jpath=/home/gcmlit/Middleware/gc-jobs/config/log4j2.properties
